@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url('./imgs/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.main{
+    width: 80vw;
+    height: 78vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2vw;
+    box-shadow: 0 0 2.5vw #6b886b;
+}
+
+.main .left,
+.main .right{
+    width: 38vw;
+    height: 78vh;
+    float: left;
+}
+.main .right{
+    width: 42vw;
+}
+.main::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.main .left{
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+    background-image: url('./imgs/cardBg.png');
+    background-repeat: no-repeat;
+    background-size: 45vw 79vh;
+    background-position-x: -6vw;
+}
+
+/* 输入部分 */
+.main .right{
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    background: #fff;
+    overflow: hidden;
+}
+.main .right>div{
+    width: 7vw;
+    height: 13vh;
+    float: right;
+}
+.main .right>div:first-child{
+    background-image: url('./imgs/vectorSmart.png');
+    background-repeat: no-repeat;
+    background-size: 7vw 13vh;
+}
+.main .right>div:nth-child(2){
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    font-size: 2vw;
+    font-family: KaiTi;
+    color: #354935;
+    font-weight: 700;
+}
+.main .right>div:nth-child(3){
+    width: 100%;
+    height: 6vh;
+    position: relative;
+    
+}
+.main .right>div:nth-child(3) img{
+    width: 17vw;
+    height: 1.7vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 账号和密码输入部分、注册 */
+.main .right>.user-content,
+.main .right>.password-content,
+.main .right>.forget-content{
+    width: 100%;
+    height: 8vh;
+    position: relative;
+    /* background: #999; */
+}
+
+.main .right>.user-content,
+.main .right>.password-content{
+    height: 10vh;
+}
+.main .right>.user-content{
+    margin-top: 2vh;
+}
+
+/* 账号、密码错误时显示样式 ------------------ */ 
+.main .right>.user-content .font,
+.main .right>.password-content .font{
+    width: 30vw;
+    height: 4vh;
+    text-align: right;
+    line-height: 4vh;
+    font-size: 1vw;
+    color: red;
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+}
+.main .right>.password-content{
+    margin-top: 2vh;
+}
+/* -------------------------------------------- */
+
+/* input 的 placeholder 的字体颜色 */
+.input-default::-webkit-input-placeholder { 
+    /* WebKit browsers */ 
+    color: #ccc; 
+} 
+.input-default:-moz-placeholder { 
+    /* Mozilla Firefox 4 to 18 */ 
+    color: #ccc; 
+} 
+.input-default::-moz-placeholder { 
+    /* Mozilla Firefox 19+ */ 
+    color: #ccc; 
+} 
+.input-default:-ms-input-placeholder { 
+    /* Internet Explorer 10+ */ 
+    color: #ccc; 
+}
+
+/* placeholder 红色字体 */
+.input-red::-webkit-input-placeholder { 
+    /* WebKit browsers */ 
+    color: #ccc; 
+} 
+.input-red:-moz-placeholder { 
+    /* Mozilla Firefox 4 to 18 */ 
+    color: #ccc; 
+} 
+.input-red::-moz-placeholder { 
+    /* Mozilla Firefox 19+ */ 
+    color: #ccc; 
+} 
+.input-red:-ms-input-placeholder { 
+    /* Internet Explorer 10+ */ 
+    color: #ccc; 
+}
+
+.main .right>.user-content .user-box,
+.main .right>.password-content .password-box,
+.main .right>.forget-content .forget-box{
+    width: 30vw;
+    height: 5.5vh;
+    position: absolute;
+    left: 50%;
+    /* bottom: 0; */
+    transform: translate(-50%, 0%);
+    border-bottom: 0.23vh solid #354935;
+}
+.main .right>.user-content .user-box>div,
+.main .right>.password-content .password-box>div{
+    float: left;
+}
+.main .right>.user-content .user-box .user-icon,
+.main .right>.password-content .password-box .password-icon{
+    width: 4vw;
+    height: 5.5vh;
+    box-sizing: border-box;
+    position: relative;
+}
+.main .right>.user-content .user-box .user-icon img,
+.main .right>.password-content .password-box .password-icon img{
+    height: 4vh;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+}
+.main .right>.user-content .user-box .user-input,
+.main .right>.password-content .password-box .password-input{
+    /* width: 24vw; */
+    /* height: 5vh; */
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 2vw;
+    /* border: 1px solid red; */
+}
+.main .right>.user-content .user-box .user-input input,
+.main .right>.password-content .password-box .password-input input{
+    width: 22vw;
+    height: 4.5vh;
+    border: none;
+    background: #fff;
+    /* border: 1px solid blue; */
+}
+
+/* WebKit browsers */
+.main .right>.user-content .user-box .user-input input::-webkit-input-placeholder,
+.main .right>.password-content .password-box .password-input input::-webkit-input-placeholder{ 
+    color: #999;
+    font-size: 0.8rem;
+  }
+  
+/* Mozilla Firefox 19+ */
+.main .right>.user-content .user-box .user-input input::-moz-placeholder,
+.main .right>.password-content .password-box .password-input input::-moz-placeholder{ 
+    color: #999;
+    font-size: 0.8rem;
+  }
+  
+/* Internet Explorer 10+ */
+.main .right>.user-content .user-box .user-input input:-ms-input-placeholder,
+.main .right>.password-content .password-box .password-input input:-ms-input-placeholder{ 
+    color: #999;
+    font-size: 0.8rem;
+  }   
+
+
+/* 忘记密码?注册 */
+.main .right>.forget-content{
+    height: 5vh;
+}
+.main .right>.forget-content .forget-box{
+    width: 30vw;
+    border: none;
+    position: relative;
+}
+
+.main .right>.forget-content .forget-box .forget{
+    height: 2vh;
+    text-align: right;
+    line-height: 2vh;
+    font-size: 0.8vw;
+    color: #999;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+/* 登录按钮 */
+.main .right>.login-content{
+    width: 100%;
+    height: 11vh;
+    position: relative;
+}
+
+.main .right>.login-content .login{
+    width: 12vw;
+    height: 5.5vh;
+    border: none;
+    border-radius: 2vw;
+    background: #354935;
+    /* background: #556e55; */
+    color: #fff;
+    font-size: 1.6vw;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+    outline-style: none;
+    box-shadow: inset 0 0 0;
+}
+
+/* 记住密码 */
+.main .right>.memoriza-content{
+    width: 100%;
+    height: 6vh; 
+    font-size: 0.8vw;
+    color: #999;
+    position: relative;
+    overflow: hidden;
+}
+.main .right>.memoriza-content>div:first-child{
+    height: 3vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 3vh;
+    /* border: 1px solid red; */
+}
+.main .right>.memoriza-content>div:first-child input{
+    vertical-align:text-bottom;
+}

@@ -1,0 +1,276 @@
+/* 临时隐藏地图系统内容 */
+/* .mapbox{
+    display: none;
+} */
+
+.videobox{
+    width: 100%;
+    height: 91.5vh;
+    overflow: hidden;
+    color: #fff;
+    font-size: 1.2vw;
+    display: none;
+}
+.videobox>div{
+    float: left;
+}
+
+.videobox .videobox-left{
+    width: 12.5vw;
+    height: 91.5vh;
+    position: relative;
+    background: #303030;
+}
+.videobox .videobox-left>div:nth-child(1){
+    width: 12.5vw;
+    height: 18vh;
+    position: relative;
+    /* background: red; */
+}
+
+.videobox .videobox-left>div:nth-child(2){
+    width: 12.5vw;
+    height: 15vh;
+    position: absolute;
+    bottom: 0;
+}
+.videobox .videobox-left>div:nth-child(1) .video-btn{
+    width: 12.5vw;
+    height: 8vh;
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    line-height: 8vh;
+}
+.videobox .videobox-left>div:nth-child(2) .back-system{
+    width: 12.5vw;
+    height: 8vh;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    text-align: center;
+    line-height: 8vh;
+}
+
+
+.videobox .videobox-right{
+    width: 87.3vw;
+    height: 91.5vh;
+    /* background: #ccc; */
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    position: relative;
+}
+.videobox .videobox-right .right-content{
+    width: 85vw;
+    height: 86vh;
+    background: #303030;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.8vw;
+    margin-left: 0.2vw;
+}
+.videobox .videobox-right .right-content .content-box{
+    width: 80vw;
+    height: 78vh;
+    /* background: #ccc; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.5);
+
+
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;  
+    -moz-flex-wrap: wrap;  
+    -ms-flex-wrap: wrap;  
+    -o-flex-wrap: wrap;  
+    flex-wrap: wrap;
+}
+.videobox .videobox-right .right-content .content-box>div{
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(1){
+    width: 80vw;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(1)>div{
+    width: 6vw;
+    font-size: 1.2vw;
+    font-weight: 700;
+} 
+
+.videobox .videobox-right .right-content .content-box>div:nth-child(1)>div>span{
+    cursor: pointer;
+} 
+.videobox .videobox-right .right-content .content-box>div:nth-child(1)>div>span:hover{
+    color: #fff;
+}
+
+.videobox .videobox-right .right-content .content-box>div:nth-child(2){
+    width: 7vw;
+    height: 70vh;
+    /* background: green; */
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+/* --------------码流类型 */
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) p{
+    font-size: 0.8vw;
+    font-weight: 700;
+}
+/* ----------------主流码 */
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) select{
+    width: 5vw;
+    color: #ccc;
+    font-size: 0.8vw;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1vw;
+    margin-top: 1vh;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul{
+    list-style-type: none;
+    font-size: 0.82vw;
+    overflow-y: auto;
+
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 5px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul::-webkit-scrollbar-thumb {
+/*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #535353;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul::-webkit-scrollbar-track {
+/*滚动条里面轨道*/
+    box-shadow : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #ededed;
+}
+
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul li{
+    margin-top: 0.8vh;
+    /* overflow:hidden;  */
+    white-space:nowrap; /*文字不换行*/
+    text-overflow:ellipsis; /*超出则...代替*/
+    /* border: 1px solid red; */
+    
+    cursor: pointer;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul li:hover span{
+    color: #fff;
+}
+
+.videobox .videobox-right .right-content .content-box>div:nth-child(2) ul li img{
+    width: 0.6vw;
+    height: 1.3vh;
+}
+
+/* ----------------视频窗口------------ */
+.videobox .videobox-right .right-content .content-box>div:nth-child(3){
+    width: 65vw;
+    height: 70vh;
+    margin-left: 0.5vw;
+    /* background: #575757; */
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(3) button{
+    width: 5vw;
+    height: 3vh;
+}
+
+/* ----------------右边 6 个图标------------------ */
+.videobox .videobox-right .right-content .content-box>div:nth-child(4){
+    width: 7.5vw;
+    height: 70vh;
+    position: relative;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(4) .icon-box{
+    width: 2.8vw;
+    height: 38vh;
+    background: #575757;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2vw;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(4) .icon-box .icon-content{
+    width: 2.8vw;
+    height: 33vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex;
+    
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(4) .icon-box .icon-content>div{
+    width: 2.8vw;
+    height: 5.5vh;
+    position: relative;
+    
+}
+.videobox .videobox-right .right-content .content-box>div:nth-child(4) .icon-box .icon-content>div img{
+    width: 1.6vw;
+    height: 2.6vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
