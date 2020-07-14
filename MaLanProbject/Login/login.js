@@ -80,11 +80,12 @@ loginBtn.addEventListener('click', function(){
 checkbox.onclick = function(){
     // var boo = this.checked ? true : false;
     // if(boo){
-    //     console.log('真')
-
+    //    cookieTest()
+    //    document.cookie="name="+username.value;
     // }else{
-    //     console.log('假')        
+    //     console.log('假')     
     // }
+    console.log(1)
     alert('记住密码功能还没有做')
 }
 
