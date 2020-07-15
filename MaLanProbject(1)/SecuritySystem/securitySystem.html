@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安防系统</title>
+
+    <link rel="stylesheet" href="./securitySystem.css">
+    <link rel="stylesheet" href="./video.css">
+    <link rel="stylesheet" href="./floorCameraCss/oneTower.css">
+    <link rel="stylesheet" href="./floorCameraCss/twoTower.css">
+    <link rel="stylesheet" href="./floorCameraCss/threeTower.css">
+    <link rel="stylesheet" href="./floorCameraCss/fourTower.css">
+</head>
+<body>
+    
+    <div class="header">
+        <!-- 安防系统图标和文字 -->
+        <div class="security-box">
+            <div class="security-icon"><img src="./imgs/securityIcon.png" alt="安防图标"></div>
+            <div class="security-text">安防系统</div>
+        </div>
+
+        <!-- 中间 -->
+        <div class="header-middle">
+            <div id="middleBox" class="middle-box">
+                <!-- 地图系统 -->
+                <div id="mapSystem" class="map-system">地图系统</div>
+
+                <!-- 门禁系统 -->
+                <div id="entranceGuard" class="entrance-guard">门禁系统</div>
+
+                <!-- 视频监控 -->
+                <div id="video" class="video">视频监控</div>
+            </div>
+        </div>
+
+        <!-- 右边图标 -->
+        <div class="header-right">
+            <!-- 矢量智能对象 -->
+            <!-- <a href="file:///C:/Users/lain1/Desktop/MaLanProbject/HomePage/homepage.html"><div class="homepageImg"><img src="./imgs/homepage.png" alt=""></div></a> -->
+            <div id="management" class="vector-smart"><img src="./imgs/management.png" alt=""></div>
+            <div id="notice" class="notice"><img src="./imgs/notice.png" alt=""></div>
+            <div class="shutdown"><img  id="shutdown" src="./imgs/shutdown.png" alt=""></div>
+        </div>
+    </div>
+
+    <!-- 地图系统内容 -->
+    <div id="mapbox" class="mapbox">
+        <div class="mapbox-left">
+            <div id="leftBox" class="left-box">
+                <div id="fourTower">四楼</div>
+                <div id="threeTower">三楼</div>
+                <div id="twoTower">二楼</div>
+                <div id="oneTower">一楼</div>
+            </div>
+        </div>
+
+        <!-- 一楼3D图 -->
+        <div id="oneMap" class="one-map">
+            <div class="camera gun"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+
+            <!-- 摄像头说明 -->
+            <div class="cameraDescription">
+                <div class="gun-box "><img class="camera-img" src="./imgs/gun.png" alt="">枪机</div>
+                <div class="hemisphere-box "><img class="camera-img" src="./imgs/hemisphere.png" alt="">半球机</div>
+                <div class="ballhead-camera-box "><img class="camera-img" src="./imgs/ballheadCamera.png" alt="">球机</div>
+            </div>
+        </div>
+
+        <!-- 二楼3D图 -->
+        <div id="twoMap" class="two-map">
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+
+            <!-- 摄像头说明 -->
+            <div class="cameraDescription">
+                <div class="gun-box "><img class="camera-img" src="./imgs/gun.png" alt="">枪机</div>
+                <div class="hemisphere-box "><img class="camera-img" src="./imgs/hemisphere.png" alt="">半球机</div>
+                <div class="ballhead-camera-box "><img class="camera-img" src="./imgs/ballheadCamera.png" alt="">球机</div>
+            </div>
+        </div>
+
+        <!-- 三楼3D图 -->
+        <div id="threeMap" class="three-map">
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera gun"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera ballhead-camera"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+
+            <!-- 摄像头说明 -->
+            <div class="cameraDescription">
+                <div class="gun-box "><img class="camera-img" src="./imgs/gun.png" alt="">枪机</div>
+                <div class="hemisphere-box "><img class="camera-img" src="./imgs/hemisphere.png" alt="">半球机</div>
+                <div class="ballhead-camera-box "><img class="camera-img" src="./imgs/ballheadCamera.png" alt="">球机</div>
+            </div>
+        </div>
+
+        <!-- 四楼3D图 -->
+        <div id="fourMap" class="four-map">
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera gun"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera hemisphere"></div>
+            <div class="camera gun"></div>
+
+            <!-- 摄像头说明 -->
+            <div class="cameraDescription">
+                <div class="gun-box "><img class="camera-img" src="./imgs/gun.png" alt="">枪机</div>
+                <div class="hemisphere-box "><img class="camera-img" src="./imgs/hemisphere.png" alt="">半球机</div>
+                <div class="ballhead-camera-box "><img class="camera-img" src="./imgs/ballheadCamera.png" alt="">球机</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频监控内容 -->
+    <div id="videoBox" class="videobox">
+        <div class="videobox-left">
+            <div>
+                <div class="video-btn">视频监控</div>
+            </div>
+
+            <div>
+                <div class="back-system"><a href="../HomePage/homepage.html">返回系统</a></div>
+            </div>
+        </div>
+
+        <div class="videobox-right">
+            <div class="right-content">
+                <div class="content-box">
+                    <div>
+                        <div><span id="preview">预览</span></div>
+                        <div><span id="videotape">录像</span></div>
+                        <div><span id="intercalate">设置</span></div>
+                        <!-- <div><span id="startPreview">开始预览</span></div> -->
+                        <div><span id="stopPreview">停止预览</span></div>
+                    </div>
+
+                    <!-- 码流类型 -->
+                    <div>
+                        <p>码流类型</p>
+                        <select>
+                            <option value="主流码">主流码</option>
+                            <option value="子流码">子流码</option>
+                        </select>
+                        <ul id="list">
+                            <li>
+                                <!-- <img src="./imgs/videoImgs/monitorIcon.png" alt=""> -->
+                                <!-- <span>软件包</span> -->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 视频窗口 -->
+                    <div>
+                        <div id="divPlugin"></div>
+                    </div>
+
+                    <div>
+                        <div class="icon-box">
+                            <div class="icon-content">
+                                <div><img src="./imgs/videoImgs/1.png" alt=""></div>                                
+                                <div><img src="./imgs/videoImgs/2.png" alt=""></div>                                
+                                <div><img src="./imgs/videoImgs/3.png" alt=""></div>                                
+                                <div><img src="./imgs/videoImgs/4.png" alt=""></div>                                
+                                <div><img src="./imgs/videoImgs/5.png" alt=""></div>                                
+                                <div><img src="./imgs/videoImgs/6.png" alt=""></div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/webVideoCtrl.js"></script>
+    <script src="./securitySystem.js"></script>
+</body>
+
+</html>

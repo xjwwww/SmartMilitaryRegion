@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动环系统</title>
+
+    <link rel="stylesheet" href="./ringSystem.css">
+    <link rel="stylesheet" href="./EnvironmentalCss/NoWaterleakage.css">
+    <link rel="stylesheet" href="./EnvironmentalCss/PrecisionAir.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- 安防系统图标和文字 -->
+        <div class="ring-box">
+            <div class="ring-icon"><img src="./imgs/ringIcon.png" alt="动环图标"></div>
+            <div class="ring-text">动环系统</div>
+        </div>
+
+        <!-- 中间 -->
+        <div class="header-middle">
+            <div id="middleBox" class="middle-box">
+                <!-- 环境系统 -->
+                <div id="environmentSystem" class="environment-system">环境系统</div>
+
+                <!-- 动力系统 -->
+                <div id="powerGuard" class="power-guard">动力系统</div>
+
+                <!-- 安防监控 -->
+                <div id="security" class="security">安防监控</div>
+
+                <!-- 运维监控 -->
+                <div id="operations" class="operations">运维监控</div>
+            </div>
+        </div>
+
+        <!-- 右边图标 -->
+        <div class="header-right">
+            <!-- 矢量智能对象 -->
+            <div id="management" class="vector-smart"><img src="./imgs/management.png" alt=""></div>
+            <div id="notice" class="notice"><img src="./imgs/notice.png" alt=""></div>
+            <div class="shutdown"><img id="shutdown" src="./imgs/shutdown.png" alt=""></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- 左边列表 -->
+        <ul id="mainLeft" class="main-left">
+            <!-- li 是根据后端返回的数据，遍历在页面上时创建的，以下 li 只是用来写 css 样式的 -->
+            <li>温湿度</li>
+            <li>非定位漏水</li>
+            <li>精密空调</li>
+
+            <!-- 请根据后端的路径 -->
+            <div><a href="../HomePage/homepage.html">返回系统</a></div>
+        </ul>
+
+        <!-- 右边内容 -->
+        <div class="main-right">
+            <!-- 非定位漏水 -->
+            <div>
+                <div>
+                    <text>实时数据</text>
+                    <text style="margin-left: 6vw;color: #888;">报警数据</text>
+                </div>
+                <div>
+                    <text>非定位漏水</text>
+                </div>
+                <div>
+                    <text>通道</text>
+                    <text style="margin-left: 26.5vw">状态</text>
+                </div>
+                <div>
+                    <text>DIO</text>
+                    <test class="right-state" id="right-state">正常</test>
+                </div>
+            </div>
+
+            <!-- 紧密空调 -->
+            <div>
+                <div>
+                    <text>实时数据</text>
+                    <text style="margin-left: 6vw;color: #888;">报警数据</text>
+                </div>
+                <div>1号精密空调</div>
+                <div>
+                    <test class="right-temperature" id="right-temperature">
+                        <img class="temperature" src="./imgs/temperature.png"> 温度:23℃
+                    </test>
+                    <test class="right-humidity" id="right-humidity">
+                        <img class="humidity" src="./imgs/temperature.png"> 湿度:56%
+                    </test>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <text>制冷状态:</text>
+                            <text>运行</text>
+                        </div>
+                        <div>
+                            <text>除湿状态:</text>
+                            <text>停止</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="../Request/request.js"></script>
+<script src="./ringSystem.js"></script>
+
+</html>

@@ -1,0 +1,51 @@
+/* 非定位漏水 */
+
+.main .main-right>div:nth-child(1) {
+    display: none;
+}
+
+.main .main-right>div:nth-child(1) {
+    width: 66vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 2vh 0 0 1vw;
+    color: #fff;
+}
+
+.main .main-right>div:nth-child(1)>div:nth-child(1) {
+    font-size: 1.3vw;
+    padding-left: 5.7vw;
+    padding-top: 5.5vh;
+}
+
+.main .main-right>div:nth-child(1)>div:nth-child(2) {
+    font-size: 1.5vw;
+    padding-top: 9.5vh;
+    padding-left: 21vw;
+}
+
+.main .main-right>div:nth-child(1)>div:nth-child(3) {
+    font-size: 1.3vw;
+    margin-left: 7vw;
+    margin-top: 10vh;
+}
+
+.main .main-right>div:nth-child(1)>div:nth-child(4) {
+    font-size: 1.3vw;
+    margin-top: 5vh;
+    margin-left: 7vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main .main-right>div:nth-child(1)>div:nth-child(4) .right-state {
+    margin-left: 23.5vw;
+    background-color: #2e4033;
+    width: 10vw;
+    line-height: 7vh;
+    border-radius: 10vw;
+    display: flex;
+    justify-content: center;
+}

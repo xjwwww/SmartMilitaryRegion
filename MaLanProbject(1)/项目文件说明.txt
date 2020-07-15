@@ -1,0 +1,21 @@
+
+ 1. HomePage ---- 主页
+
+ 2. Login    ---- 登录页面
+
+ 3. Request  ---- 封装好的 ajax
+
+ 4. RingSystem ---- 未写的动环系统页面
+
+
+ 5. SecuritySystem ---- 安防系统页面
+ 
+    1. foolrCameraCss ---- 各个楼层的摄像头定位
+
+    2. imgs/videoImgs ---- 视频监控的图片
+
+    3. video.css ---- 视频监控的 css 样式
+
+    4. js/webVideoCtrl.js ---- 海康威视开发包
+
+    5. floorCameraCss ---- 地图系统每个楼层的样式

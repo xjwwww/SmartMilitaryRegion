@@ -1,0 +1,67 @@
+/* 摄像头：从左到右 */
+.mapbox .three-map>div:first-child{
+    position: absolute;
+    top: 42vh;
+    left: 1.5vw;
+    transform: rotate(-47deg);
+}
+.mapbox .three-map>div:nth-child(2){
+    position: absolute;
+    top: 60vh;
+    left: 6.5vw;
+    transform: rotateZ(-14deg);
+}
+.mapbox .three-map>div:nth-child(3){
+    position: absolute;
+    top: 61vh;
+    left: 11vw;
+    transform: rotateZ(-71deg);
+}
+
+.mapbox .three-map>div:nth-child(4){
+    position: absolute;
+    top: 37vh;
+    left: 12.3vw;
+    transform: rotateZ(-50deg) rotateY(180deg);
+}
+
+.mapbox .three-map>div:nth-child(5){
+    position: absolute;
+    top: 27.6vh;
+    left: 25vw;
+    transform: rotateZ(17deg);
+}
+
+.mapbox .three-map>div:nth-child(6){
+    position: absolute;
+    top: 42vh;
+    left: 31vw;
+    transform: rotateY(38deg) rotateZ(-3deg);
+}
+
+.mapbox .three-map>div:nth-child(7){
+    position: absolute;
+    top: 53vh;
+    left: 36vw;
+    transform: rotateZ(100deg);
+}
+
+.mapbox .three-map>div:nth-child(8){
+    position: absolute;
+    top: 15vh;
+    left: 39.5vw;
+    transform: rotateZ(371deg);
+}
+.mapbox .three-map>div:nth-child(9){
+    position: absolute;
+    top: 11.5vh;
+    left: 44vw;
+    transform: rotateZ(370deg);
+}
+
+.mapbox .three-map>div:nth-child(10){
+    position: absolute;
+    top: 32.5vh;
+    left: 56vw;
+    transform: rotateZ(90deg);
+}

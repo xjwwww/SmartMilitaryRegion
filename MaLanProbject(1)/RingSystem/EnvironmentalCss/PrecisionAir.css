@@ -1,0 +1,59 @@
+.main .main-right>div:nth-child(2) {
+    width: 86vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 2vh 0 0 1vw;
+    color: #fff;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(1) {
+    font-size: 1.3vw;
+    padding-left: 5.7vw;
+    padding-top: 5.5vh;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(2) {
+    font-size: 1.3vw;
+    padding-left: 5.7vw;
+    margin-top: 7vh;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(3) .right-humidity,
+.main .main-right>div:nth-child(2)>div:nth-child(3) .right-temperature {
+    margin-top: 6vh;
+    font-size: 1vw;
+    margin-left: 6.5vw;
+    background-color: #DE8C10;
+    width: 11vw;
+    line-height: 6.4vh;
+    border-radius: 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(3) .right-humidity .humidity,
+.main .main-right>div:nth-child(2)>div:nth-child(3) .right-temperature .temperature {
+    height: 3.8vh;
+    width: 1.1vw;
+    margin: auto 0.7vw auto 0.5vw;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(3) .right-humidity {
+    background-color: #259625;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(4) {
+    margin-left: 9vw;
+    margin-top: 4.5vh;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(4)>div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+}
