@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./ringSystem.css">
     <link rel="stylesheet" href="./EnvironmentalCss/NoWaterleakage.css">
     <link rel="stylesheet" href="./EnvironmentalCss/PrecisionAir.css">
+    <link rel="stylesheet" href="./EnvironmentalCss/TempAndHumi.css">
+    <script src="./Echart/echarts.min.js"></script>
 </head>
 
 <body>
@@ -49,9 +51,9 @@
         <!-- 左边列表 -->
         <ul id="mainLeft" class="main-left">
             <!-- li 是根据后端返回的数据，遍历在页面上时创建的，以下 li 只是用来写 css 样式的 -->
-            <li>温湿度</li>
-            <li>非定位漏水</li>
-            <li>精密空调</li>
+            <li id="ControlTemp">温湿度</li>
+            <li id="NoWaterleakage">非定位漏水</li>
+            <li id="PrecisionAir">精密空调</li>
 
             <!-- 请根据后端的路径 -->
             <div><a href="../HomePage/homepage.html">返回系统</a></div>
@@ -60,49 +62,122 @@
         <!-- 右边内容 -->
         <div class="main-right">
             <!-- 非定位漏水 -->
-            <div>
+            <div id="water-leakage">
                 <div>
                     <text>实时数据</text>
                     <text style="margin-left: 6vw;color: #888;">报警数据</text>
                 </div>
                 <div>
-                    <text>非定位漏水</text>
+                    <text></text>
                 </div>
                 <div>
                     <text>通道</text>
                     <text style="margin-left: 26.5vw">状态</text>
                 </div>
                 <div>
-                    <text>DIO</text>
-                    <test class="right-state" id="right-state">正常</test>
+                    <text></text>
+                    <p class="right-state" id="right-state"></p>
                 </div>
             </div>
 
-            <!-- 紧密空调 -->
-            <div>
+            <!-- 精密空调 -->
+            <div id="right-AirConditioner">
                 <div>
                     <text>实时数据</text>
-                    <text style="margin-left: 6vw;color: #888;">报警数据</text>
+                    <text style="margin-left: 2.5vw;color: #888;">报警数据</text>
                 </div>
-                <div>1号精密空调</div>
                 <div>
-                    <test class="right-temperature" id="right-temperature">
-                        <img class="temperature" src="./imgs/temperature.png"> 温度:23℃
-                    </test>
+                    <text></text>
+                    <text>报警状态</text>
+                </div>
+                <div>
+                    <text class="right-temperature" id="right-temperature">
+                        <img class="temperature" src="./imgs/temperature.png" alt=""> 
+                    </text>
                     <test class="right-humidity" id="right-humidity">
-                        <img class="humidity" src="./imgs/temperature.png"> 湿度:56%
+                        <img class="humidity" src="./imgs/humidity.png" alt="">
                     </test>
                 </div>
+                <div id="AirState">
+                    <ul>
+                        <li>制冷状态：</li>
+                        <li>制冷状态：</li>
+                        <li>加热状态：</li>
+                    </ul>
+                    <!-- 状态 -->
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li>制冷状态：</li>
+                        <li>制冷状态：</li>
+                        <li>加热状态：</li>
+                    </ul>
+                    <!-- 状态 -->
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div id="AlarmStatus">
+                    <ul>
+                        <li>高压警报</li>
+                        <li>低压警报</li>
+                        <li>电源故障报警</li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li>高压警报</li>
+                        <li>低压警报</li>
+                        <li>电源故障报警</li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li>高压警报</li>
+                        <li>低压警报</li>
+                        <li>电源故障报警</li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 温湿度 -->
+            <div id="TempAndHumi">
+                <div>
+                    <text>实时数据</text>
+                    <text>报警数据</text>
+                    <text>历史曲线</text>
+                    <text>设备管理</text>
+                </div>
+                <div id="Chart"></div>
                 <div>
                     <div>
-                        <div>
-                            <text>制冷状态:</text>
-                            <text>运行</text>
-                        </div>
-                        <div>
-                            <text>除湿状态:</text>
-                            <text>停止</text>
-                        </div>
+                        <img src="./imgs/temperatureicon.png" style="margin-right: 0.5vw;height: 1vh;" alt="" />温度
+                    </div>
+                    <div>
+                        <img src="./imgs/humidityicon.png" style="margin-right:0.5vw;height: 0.9vh;" alt="" />湿度
+                    </div>
+                    <div id="TempAndHumi-temperature">
+                        <div style="color: #D5D5D5;">温度</div>
+                        <div></div>
+                    </div>
+                    <div id="TempAndHumi-humidity">
+                        <div style="color: #D5D5D5;">湿度</div>
+                        <div></div>
                     </div>
                 </div>
             </div>
@@ -111,5 +186,8 @@
 </body>
 <script src="../Request/request.js"></script>
 <script src="./ringSystem.js"></script>
+
+<!-- echarts曲线图插件 -->
+<script src="Echart/Echart.js"></script>
 
 </html>

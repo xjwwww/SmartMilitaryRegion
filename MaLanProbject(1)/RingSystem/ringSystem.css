@@ -182,6 +182,7 @@ body {
 /* 左边列表 */
 
 .main .main-left {
+    cursor: pointer;
     width: 12vw;
     height: inherit;
     background: #303030;
@@ -246,5 +247,4 @@ body {
 .main .main-right {
     width: 88vw;
     height: inherit;
-    background: #181818;
 }

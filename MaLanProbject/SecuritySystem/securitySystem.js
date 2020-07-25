@@ -112,14 +112,21 @@ document.getElementById('stopPreview').addEventListener('click', function () {
 });
 
 //一键预览
-document.getElementById('startPreviews').addEventListener('click', function () {
-    for (var i = 17; i < 33; i++) {
+var Frequency = 1  //点击次数对应的数据通道号，默认为1
+document.getElementById('OneStartPreviews').addEventListener('click', function () {
+    var list = document.getElementById('list');
+    var LiNumber = list.getElementsByTagName("li").length
+    // console.log( Math.ceil(1/16))
+    if(Math.ceil(Frequency/16) > Math.ceil(LiNumber/16))
+       alert("已无视频!")
+    for (let i = Frequency; i < Frequency + 16; i++) {
         onceStartPreview(i)
     }
+    Frequency = Frequency + 16
 })
 
 //一键停止预览
-document.getElementById("stopPreviews").addEventListener('click', function () {
+document.getElementById("OneStopPreviews").addEventListener('click', function () {
     for (var i = 0; i < 16; i++) {
         WebVideoCtrl.I_Stop({
             iWndIndex: i,
@@ -249,7 +256,6 @@ function getChannel() {
             console.log(" 获取模拟通道失败！")
         }
     })
-
     // 获取数字通道; 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
     WebVideoCtrl.I_GetDigitalChannelInfo('192.168.1.65_80', {
         async: false,
@@ -349,7 +355,6 @@ function startPreview(liValue) {
             }
         });
     } else {
-        console.log("没有视频的情况下！！")
         // 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
         WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
             // iWndIndex: val-1,
@@ -365,17 +370,23 @@ function startPreview(liValue) {
 }
 
 //一键开始预览
-function onceStartPreview(test) {
-    let windowNumber = test
+function onceStartPreview(DataChannel) {
+    
+    //窗口号:DataChannel取余
+    let windowNumber = DataChannel
+
     if (windowNumber % 16 == 0)
         windowNumber = 16
     else
-        windowNumber = test % 16
-    console.log(windowNumber)    
+        windowNumber = DataChannel % 16
+
+    //获取当前窗口的状态
+    var oWndInfo = WebVideoCtrl.I_GetWindowStatus();
+
     // 开始预览; 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
     WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
         iWndIndex: windowNumber - 1,
-        iChannelID: test,
+        iChannelID: DataChannel,
         success: function () {
             console.log("一键预览成功")
         },
@@ -383,6 +394,36 @@ function onceStartPreview(test) {
             console.log("一键预览失败")
         }
     });
-    // var oWndInfo = WebVideoCtrl.I_GetWindowStatus();
-    // console.log(oWndInfo)
+    // 已经在播放了，先停止
+    if (oWndInfo != null) {
+        console.log(DataChannel)
+        WebVideoCtrl.I_Stop({
+            iWndIndex: windowNumber - 1,
+            success: function () {
+                // 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
+                WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
+                    iWndIndex: windowNumber - 1,
+                    iChannelID: DataChannel,
+                    success: function () {
+                        console.log("预览成功")
+                    },
+                    error: function () {
+                        console.log("预览失败")
+                    }
+                });
+            }
+        });
+    } else {
+        // 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
+        WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
+            iWndIndex: windowNumber - 1,
+            iChannelID: DataChannel,
+            success: function () {
+                console.log("----预览成功---")
+            },
+            error: function () {
+                console.log("预览失败")
+            }
+        });
+    }
 }

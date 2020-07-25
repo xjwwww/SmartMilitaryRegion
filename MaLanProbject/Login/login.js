@@ -12,42 +12,42 @@ var checkbox = document.getElementById('checkbox');
 var fonts = document.getElementsByClassName('font');
 
 // 忘记密码/注册 没有设计图，还没有做
-forget.onclick = function(){
+forget.onclick = function() {
     alert('没有设计图，还没有做!')
 }
 
 // 输入框获取焦点隐藏 账号或密码不能为空红色字体
-username.onchange = function(){
+username.onchange = function() {
     fonts[0].style.display = 'none';
 };
-password.onchange = function(){
+password.onchange = function() {
     fonts[1].style.display = 'none';
 };
 
 // 登录
-loginBtn.addEventListener('click', function(){
+loginBtn.addEventListener('click', function() {
     this.style.background = '#556e55';
     let Data = {
         username: username.value,
         password: password.value
     }
 
-    if(Data.username == ''){     
+    if (Data.username == '') {
         fonts[0].innerHTML = '账号或密码不能为空';
         fonts[0].style.display = 'block';
 
-    }else if(Data.password == ''){
+    } else if (Data.password == '') {
         fonts[1].innerHTML = '账号或密码不能为空'
         fonts[1].style.display = 'block';
 
-    }else{
+    } else {
         // console.log(Data.username, Data.password)
 
         // 登录 ajax, 第二个参数是请求接口
-        AJAX('POST', '', Data, true, function(res, status){
+        AJAX('POST', '', Data, true, function(res, status) {
 
-            if(status !== 200){
-                for(let i = 0; i < fonts.length; i++){
+            if (status !== 200) {
+                for (let i = 0; i < fonts.length; i++) {
                     fonts[i].innerHTML = '账号或密码错误';
                     fonts[i].style.display = 'block';
                 }
@@ -55,7 +55,7 @@ loginBtn.addEventListener('click', function(){
 
             // 登录成功跳转到主页
             window.location.href = '../HomePage/homepage.html'
-            
+
             var result = res
             console.log(result);
 
@@ -73,11 +73,11 @@ loginBtn.addEventListener('click', function(){
 //     console.log(checkbox.checked)
 
 //     checkbox.checked = !checkbox.checked
-     
+
 // })
 
 // 记住密码
-checkbox.onclick = function(){
+checkbox.onclick = function() {
     // var boo = this.checked ? true : false;
     // if(boo){
     //    cookieTest()
@@ -88,7 +88,3 @@ checkbox.onclick = function(){
     console.log(1)
     alert('记住密码功能还没有做')
 }
-
-
-
-

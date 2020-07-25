@@ -1,10 +1,9 @@
-
 let DomNodeObj = {
     middleBox: document.getElementById('middleBox'),
     mapSystem: document.getElementById('mapSystem'), // 地图系统
     entranceGuard: document.getElementById('entranceGuard'), // 门禁系统
     video: document.getElementById('video'), // 视频监控
-    
+
     // 楼层
     leftBox: document.getElementById('leftBox'),
     oneTower: document.getElementById('oneTower'),
@@ -29,22 +28,22 @@ var videoNum = 0;
 
 let FuncObj = {
     // 导航栏标题 bottom 状态方法及内容切换
-    bottomStateJump: function(){
-        for(let i = 0; i < middleBox.children.length; i++){
+    bottomStateJump: function() {
+        for (let i = 0; i < middleBox.children.length; i++) {
             DomNodeObj.middleBox.children[i].style.borderBottom = '';
         }
         this.style.borderBottom = '0.6vh solid #FFF';
 
-        if(this.id == 'mapSystem'){
+        if (this.id == 'mapSystem') {
             mapbox.style.display = 'block';
             videoBox.style.display = 'none';
 
-        }else if(this.id == 'entranceGuard'){
+        } else if (this.id == 'entranceGuard') {
             alert('门禁系统没有设计图，还没有做!')
 
-        }else if(this.id == 'video'){
+        } else if (this.id == 'video') {
             videoNum = 1;
-            console.log('47---'+videoNum)
+            console.log('47---' + videoNum)
 
             mapbox.style.display = 'none';
             videoBox.style.display = 'block';
@@ -53,9 +52,9 @@ let FuncObj = {
     },
 
     // 点击楼层切换 3D 图
-    changeThreeDMap: function(){
+    changeThreeDMap: function() {
         // 取消所有楼层的选中状态
-        for(let i = 0; i < DomNodeObj.leftBox.children.length; i++){
+        for (let i = 0; i < DomNodeObj.leftBox.children.length; i++) {
             DomNodeObj.leftBox.children[i].style.background = '';
         }
         this.style.background = 'rgba(255, 255, 255, 0.3)';
@@ -64,7 +63,7 @@ let FuncObj = {
         var temp = this.id.slice(0, num) + 'Map'; // 拼接成，如: oneMap; 
 
         // 隐藏所有 3D 图
-        for(let i = 1; i < mapbox.children.length-1; i++){
+        for (let i = 1; i < mapbox.children.length - 1; i++) {
             mapbox.children[i].style.display = 'none';
         }
         // 显示点击对应楼层的 3D 图
@@ -96,23 +95,23 @@ DomNodeObj.threeTower.addEventListener('click', FuncObj.changeThreeDMap)
 DomNodeObj.fourTower.addEventListener('click', FuncObj.changeThreeDMap)
 
 // 管理和通知---没有设计图，还没有做
-management.onclick = function(){
+management.onclick = function() {
     alert('管理---没有设计图，还没有做')
 }
-notice.onclick = function(){
+notice.onclick = function() {
     alert('通知---没有设计图，还没有做')
 };
 
 // 退出登录时，提示是否要退出
 let shutdown = document.getElementById('shutdown'); // 退出登录
-shutdown.addEventListener('click', function(){
+shutdown.addEventListener('click', function() {
     // console.log(11)
 
     var boo = confirm("您确定要退出登录吗");
     console.log(boo)
-    if(boo == true){
+    if (boo == true) {
         window.location.href = '../Login/login.html'
-    }else{
+    } else {
         return false
     }
 
@@ -124,15 +123,15 @@ shutdown.addEventListener('click', function(){
 VideoPlugin();
 
 // 点击停止预览
-document.getElementById('stopPreview').addEventListener('click', function(){
+document.getElementById('stopPreview').addEventListener('click', function() {
     stopPreview();
 });
 
 // 即将离开当前页面（刷新或关闭）时，退出设备
-window.onbeforeunload = function(){
+window.onbeforeunload = function() {
     WebVideoCtrl.I_Logout('192.168.1.65_80');
     console.log('退出设备成功')
-    
+
     // alert('退出设备成功');
 }
 
@@ -143,19 +142,19 @@ window.onbeforeunload = function(){
 // function OneClickStoPreview(){}
 
 // 停止预览
-function stopPreview(){
+function stopPreview() {
     WebVideoCtrl.I_Stop({
-        success: function(){
+        success: function() {
             console.log('停止预览成功');
         },
-        error: function(){
+        error: function() {
             console.log('停止预览失败');
         }
     })
 }
 
 // 查看监控视频
-function VideoPlugin(){
+function VideoPlugin() {
     // 检查插件是否安装
     var iRet = WebVideoCtrl.I_CheckPluginInstall();
     // 检查插件是否已安装（包含 Chrome 版本检查）
@@ -169,14 +168,14 @@ function VideoPlugin(){
         iWndowType: 4, //分屏类型：1- 1*1，2- 2*2，3- 3*3，4- 4*4，默认值为 1， 单画面
         bWndFull: true, //是否支持单窗口双击全屏，默I_CheckPluginInstall
         szColorProperty: 'plugin-background:575757; sub-background:303030; sub-border:575757; sub-border-select:FFFF00',
-        cbSelWnd: function(xmlDov){
+        cbSelWnd: function(xmlDov) {
             // console.log('118')
             console.log(xmlDov)
         },
-        cbInitPluginComplete: function(){
+        cbInitPluginComplete: function() {
             // 在 HTML DOM 元素中插入播放插件
             WebVideoCtrl.I_InsertOBJECTPlugin('divPlugin');
-            
+
             // 检查插件版本
             if (WebVideoCtrl.I_CheckPluginVersion() === -1) {
                 alert("检测到新的插件版本，双击开发包目录里的WebComponentsKit.exe升级！")
@@ -194,21 +193,21 @@ function VideoPlugin(){
             lain123456: 密码; 这里是写死用来测试的，请根据实际填写
     */
     WebVideoCtrl.I_Login('192.168.1.65', 1, 80, 'admin', 'lain123456', {
-        success: function(xmlDoc){
+        success: function(xmlDoc) {
             console.log('登录成功');
-            
+
             // setTimeout(function(){
 
-                // 获取通道
-                getChannel();
+            // 获取通道
+            getChannel();
 
-                // 获取设备端口与 RTSP 端口
-                getDevicePort();
+            // 获取设备端口与 RTSP 端口
+            getDevicePort();
 
             // }, 50)
 
         },
-        error: function(status, xmlDoc){
+        error: function(status, xmlDoc) {
             console.log('登录失败');
         }
     })
@@ -216,30 +215,30 @@ function VideoPlugin(){
 }
 
 // 获取设备端口与 RTSP 端口
-function getDevicePort(){
+function getDevicePort() {
     var iDevicePort = undefined;
     var iRtspPort = undefined;
     // 获取设备端口与RTSP端口; 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
     let oPort = WebVideoCtrl.I_GetDevicePort('192.168.1.65_80');
     //console.log(oPort)
-    if(oPort !== null){
+    if (oPort !== null) {
         iDevicePort = oPort.iDevicePort
         iRtspPort = oPort.iRtspPort
-    }else{
+    } else {
         console.log('获取端口失败！')
     }
 }
 
 // 获取通道
-function getChannel(){
+function getChannel() {
     // 获取模拟通道; 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
     WebVideoCtrl.I_GetAnalogChannelInfo('192.168.1.65_80', {
         async: false,
-        success:  function(xmlDoc){
+        success: function(xmlDoc) {
             // console.log(xmlDoc)
             console.log('获取模拟通道成功')
         },
-        error: function(status, xmlDoc){
+        error: function(status, xmlDoc) {
             // console.log(status, xmlDoc)
             console.log(" 获取模拟通道失败！")
         }
@@ -248,7 +247,7 @@ function getChannel(){
     // 获取数字通道; 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
     WebVideoCtrl.I_GetDigitalChannelInfo('192.168.1.65_80', {
         async: false,
-        success: function(digitalChannels){
+        success: function(digitalChannels) {
             console.log('获取数字通道成功')
 
             // digitalChannels.childNodes[0].childNodes[【for循环 i 】]
@@ -258,7 +257,7 @@ function getChannel(){
             var list = document.getElementById('list');
 
             // 循环获取通道名字，插入到 li 
-            for(let i = 0; i < digitalChannels.childNodes[0].childNodes.length; i++){
+            for (let i = 0; i < digitalChannels.childNodes[0].childNodes.length; i++) {
                 // 创建元素
                 var li = document.createElement('li');
                 var img = document.createElement('img')
@@ -273,8 +272,8 @@ function getChannel(){
                 li.appendChild(img);
                 li.appendChild(span);
 
-                li.value = i+1;
-                li.onclick = function(){
+                li.value = i + 1;
+                li.onclick = function() {
                     var liVal = this.value;
                     startPreview(liVal);
                 }
@@ -282,9 +281,9 @@ function getChannel(){
                 // 把 li 插入到 ul 中去
                 list.appendChild(li);
             }
-            
+
         },
-        error: function(status, xmlDoc){
+        error: function(status, xmlDoc) {
             // console.log(status)
             console.log('获取数字通道失败')
         }
@@ -293,17 +292,17 @@ function getChannel(){
     // 获取零通道; 192.168.1.65_80: 这里是写死用来测试的，请根据实际填写
     WebVideoCtrl.I_GetZeroChannelInfo('192.168.1.65_80', {
         async: false,
-        success: function(){
+        success: function() {
             console.log('获取零通道成功')
         },
-        error: function(status, xmlDoc){
+        error: function(status, xmlDoc) {
             console.log('获取零通道失败')
         }
     });
 }
 
 // 开始预览
-function startPreview(liValue){
+function startPreview(liValue) {
     // console.log(liValue)
 
     var val = liValue;
@@ -316,16 +315,16 @@ function startPreview(liValue){
     WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
         // iWndIndex: 0,
         iChannelID: val,
-        success: function(){
+        success: function() {
             console.log("预览成功")
         },
-        error: function(){
+        error: function() {
             console.log("预览失败")
         }
     });
-    
+
     // 已经在播放了，先停止
-    if (oWndInfo != null) { 
+    if (oWndInfo != null) {
         console.log('已经在播放了，先停止，在播放')
         WebVideoCtrl.I_Stop({
             success: function() {
@@ -333,10 +332,10 @@ function startPreview(liValue){
                 WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
                     // iWndIndex: 0,
                     iChannelID: val,
-                    success: function(){
+                    success: function() {
                         console.log("预览成功")
                     },
-                    error: function(){
+                    error: function() {
                         console.log("预览失败")
                     }
                 });
@@ -347,10 +346,10 @@ function startPreview(liValue){
         WebVideoCtrl.I_StartRealPlay('192.168.1.65_80', {
             // iWndIndex: 0,
             iChannelID: val,
-            success: function(){
+            success: function() {
                 console.log("预览成功")
             },
-            error: function(){
+            error: function() {
                 console.log("预览失败")
             }
         });

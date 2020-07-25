@@ -1,5 +1,5 @@
 // 请求方式、请求接口、请求参数、异步或同步、回调函数
-function AJAX(method, url, data, flag, callback){
+function AJAX(method, url, data, flag, callback) {
     // callback(data)
 
     let xhr = null;
@@ -15,12 +15,12 @@ function AJAX(method, url, data, flag, callback){
     method = method.toUpperCase();
     if (method == "GET") {
         //初始化
-        if(data == ''){
+        if (data == '') {
             xhr.open(method, url, flag);
-            
-        }else{
+
+        } else {
             // data 传过来必须是字符串
-            xhr.open(method, url + "?"+ data, flag);
+            xhr.open(method, url + "?" + data, flag);
         }
 
         //发送请求
@@ -32,18 +32,20 @@ function AJAX(method, url, data, flag, callback){
         xhr.send(data);
     }
     //判断数据是否回来,请求是否成功
-    xhr.onreadystatechange = function () {
-        if(xhr.readyState === 4 && xhr.status === 200) {
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             // 解码为 json 格式
             var backData = JSON.parse(xhr.responseText);
             // 回调函数，返回数据
             callback(backData);
 
-        }else{
+        } else {
             callback('');
         }
     }
 }
+
+
 
 // function AJAX(method, url, data){
 //     $.ajax({
@@ -60,4 +62,3 @@ function AJAX(method, url, data, flag, callback){
 //         }
 //     })
 // }
-

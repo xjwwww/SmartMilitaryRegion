@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,9 @@
     <link rel="stylesheet" href="./floorCameraCss/threeTower.css">
     <link rel="stylesheet" href="./floorCameraCss/fourTower.css">
 </head>
+
 <body>
-    
+
     <div class="header">
         <!-- 安防系统图标和文字 -->
         <div class="security-box">
@@ -41,7 +43,7 @@
             <!-- <a href="file:///C:/Users/lain1/Desktop/MaLanProbject/HomePage/homepage.html"><div class="homepageImg"><img src="./imgs/homepage.png" alt=""></div></a> -->
             <div id="management" class="vector-smart"><img src="./imgs/management.png" alt=""></div>
             <div id="notice" class="notice"><img src="./imgs/notice.png" alt=""></div>
-            <div class="shutdown"><img  id="shutdown" src="./imgs/shutdown.png" alt=""></div>
+            <div class="shutdown"><img id="shutdown" src="./imgs/shutdown.png" alt=""></div>
         </div>
     </div>
 
@@ -58,16 +60,16 @@
 
         <!-- 一楼3D图 -->
         <div id="oneMap" class="one-map">
-            <div class="camera gun"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
+            <div class="camera gun" id="FirstOneRoom"></div>
+            <div class="camera hemisphere" id="FirstTwoRoom"></div>
+            <div class="camera gun" id="FirstThreeRoom"></div>
+            <div class="camera gun" id="FirstFourRoom"></div>
+            <div class="camera gun" id="FirstFiveRoom"></div>
+            <div class="camera gun" id="FirstSixRoom"></div>
+            <div class="camera hemisphere" id="FirstSevenRoom"></div>
+            <div class="camera hemisphere" id="FirstEightRoom"></div>
+            <div class="camera hemisphere" id="FirstNineRoom"></div>
+            <div class="camera hemisphere" id="FirstTenRoom"></div>
 
             <!-- 摄像头说明 -->
             <div class="cameraDescription">
@@ -79,14 +81,14 @@
 
         <!-- 二楼3D图 -->
         <div id="twoMap" class="two-map">
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
+            <div class="camera gun" id="SecondOneRoom"></div>
+            <div class="camera gun" id="SecondTwoRoom"></div>
+            <div class="camera gun" id="SecondThreeRoom"></div>
+            <div class="camera gun" id="SecondFourRoom"></div>
+            <div class="camera gun" id="SecondFiveRoom"></div>
+            <div class="camera gun" id="SecondSixRoom"></div>
+            <div class="camera gun" id="SecondSevenRoom"></div>
+            <div class="camera gun" id="SecondEightRoom"></div>
 
             <!-- 摄像头说明 -->
             <div class="cameraDescription">
@@ -98,16 +100,16 @@
 
         <!-- 三楼3D图 -->
         <div id="threeMap" class="three-map">
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera gun"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera ballhead-camera"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
+            <div class="camera gun" id="ThirdOneRoom"></div>
+            <div class="camera gun" id="ThirdTwoRoom"></div>
+            <div class="camera hemisphere" id="ThirdThreeRoom"></div>
+            <div class="camera gun" id="ThirdFourRoom"></div>
+            <div class="camera hemisphere" id="ThirdFiveRoom"></div>
+            <div class="camera ballhead-camera" id="ThirdSixRoom"></div>
+            <div class="camera hemisphere" id="ThirdSevenRoom"></div>
+            <div class="camera hemisphere" id="ThirdEightRoom"></div>
+            <div class="camera hemisphere" id="ThirdNineRoom"></div>
+            <div class="camera hemisphere" id="ThirdTenRoom"></div>
 
             <!-- 摄像头说明 -->
             <div class="cameraDescription">
@@ -119,12 +121,12 @@
 
         <!-- 四楼3D图 -->
         <div id="fourMap" class="four-map">
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera gun"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
-            <div class="camera hemisphere"></div>
+            <div class="camera gun" id="FourthOneRoom"></div>
+            <div class="camera gun" id="FourthTwoRoom"></div>
+            <div class="camera gun" id="FourthThreeRoom"></div>
+            <div class="camera hemisphere" id="FourthFourRoom"></div>
+            <div class="camera hemisphere" id="FourthFiveRoom"></div>
+            <div class="camera hemisphere" id="FourthSixRoom"></div>
             <div class="camera gun"></div>
 
             <!-- 摄像头说明 -->
@@ -182,12 +184,12 @@
                     <div>
                         <div class="icon-box">
                             <div class="icon-content">
-                                <div><img src="./imgs/videoImgs/1.png" alt=""></div>                                
-                                <div><img src="./imgs/videoImgs/2.png" alt=""></div>                                
-                                <div><img src="./imgs/videoImgs/3.png" alt=""></div>                                
-                                <div><img src="./imgs/videoImgs/4.png" alt=""></div>                                
-                                <div><img src="./imgs/videoImgs/5.png" alt=""></div>                                
-                                <div><img src="./imgs/videoImgs/6.png" alt=""></div>                                
+                                <div><img src="./imgs/videoImgs/1.png" alt=""></div>
+                                <div><img src="./imgs/videoImgs/2.png" alt=""></div>
+                                <div><img src="./imgs/videoImgs/3.png" alt=""></div>
+                                <div><img src="./imgs/videoImgs/4.png" alt=""></div>
+                                <div><img src="./imgs/videoImgs/5.png" alt=""></div>
+                                <div><img src="./imgs/videoImgs/6.png" alt=""></div>
                             </div>
                         </div>
                     </div>
@@ -197,7 +199,12 @@
     </div>
 
     <script src="./js/webVideoCtrl.js"></script>
+    <script src="../Request/request.js"></script>
     <script src="./securitySystem.js"></script>
+    <script src="./js/GroundFfloor.js"></script>
+    <script src="./js/SecondFloor.js"></script>
+    <script src="./js/ThirdFloor.js"></script>
+    <script src="./js/FourthFloor.js"></script>
 </body>
 
 </html>
