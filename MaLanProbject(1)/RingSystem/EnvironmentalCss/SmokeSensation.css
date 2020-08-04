@@ -1,15 +1,10 @@
-/* 非定位漏水 */
+/* 烟感样式 */
 
-
-/* :root {
-    font-size: calc(100vw / 1280 * 100);
-} */
-
-.main .main-right>div:nth-child(1) {
+.main .main-right>div:nth-child(4) {
     display: none;
 }
 
-.main .main-right>div:nth-child(1) {
+.main .main-right>div:nth-child(4) {
     width: 86vw;
     height: 86vh;
     background: rgba(255, 255, 255, 0.1);
@@ -18,24 +13,24 @@
     color: #fff;
 }
 
-.main .main-right>div:nth-child(1)>div:nth-child(1) {
+.main .main-right>div:nth-child(4)>div:nth-child(1) {
     font-size: 1.25vw;
     padding-left: 2.5vw;
     padding-top: 5.5vh;
 }
 
-.main .main-right>div:nth-child(1)>div:nth-child(1) text:hover {
+.main .main-right>div:nth-child(4)>div:nth-child(1) text:hover {
     cursor: pointer;
 }
 
-.RealTime {
+.SmokRealTime {
     display: flex;
     flex-wrap: wrap;
     margin-top: 2vh;
     font-size: 1.35vw;
 }
 
-.RealTime-mind {
+.SmokRealTime-mind {
     width: 27vw;
     background-color: #444444;
     height: 30vh;
@@ -44,7 +39,7 @@
     border-radius: 1vw;
 }
 
-.WaterState {
+.SomkeState {
     margin-left: 11vw;
     display: flex;
     justify-content: center;

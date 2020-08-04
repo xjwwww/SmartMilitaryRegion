@@ -1,7 +1,6 @@
 // 请求方式、请求接口、请求参数、异步或同步、回调函数
 function AJAX(method, url, data, flag, callback) {
     // callback(data)
-
     let xhr = null;
 
     if (window.XMLHttpRequest) {
@@ -27,6 +26,12 @@ function AJAX(method, url, data, flag, callback) {
         xhr.send();
 
     } else if (method == "POST") {
+        // xmlHttp = GetXmlHttpObject();
+        // if (xmlHttp == null) {
+        //     alert('您的浏览器不支持AJAX！');
+        //     return;
+        // }
+        // var urls = url + "?password=" + data.password + "&username=" + data.username
         xhr.open(method, url, flag);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.send(data);
@@ -35,9 +40,9 @@ function AJAX(method, url, data, flag, callback) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // 解码为 json 格式
-            var backData = JSON.parse(xhr.responseText);
+            var backData = JSON.parse(xhr.response);
             // 回调函数，返回数据
-            callback(backData);
+            callback(backData, xhr.status);
 
         } else {
             callback('');
@@ -46,6 +51,15 @@ function AJAX(method, url, data, flag, callback) {
 }
 
 
+function GetXmlHttpObject() {
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari 
+        xmlhttp = new XMLHttpRequest();
+    } else { // code for IE6, IE5 
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return xmlhttp;
+}
 
 // function AJAX(method, url, data){
 //     $.ajax({

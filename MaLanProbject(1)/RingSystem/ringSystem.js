@@ -12,106 +12,64 @@ let Environmental = {
     NoWaterleakage: document.getElementById("NoWaterleakage"),
     PrecisionAir: document.getElementById("PrecisionAir"),
     ControlTemp: document.getElementById("ControlTemp"),
+    SmokeControl: document.getElementById("SmokeControl"),
 
     // 右边内容ID
     waterLeakage: document.getElementById("water-leakage"),
     rightAirConditioner: document.getElementById("right-AirConditioner"),
-    TempAndHumi: document.getElementById("TempAndHumi")
+    TempAndHumi: document.getElementById("TempAndHumi"),
+    SmokeSensation: document.getElementById("SmokeSensation")
 }
 
-// //非定位漏水的状态
-
-//模拟后端的数据
-var data = ["正常", "报警", "正常", "报警", "正常", "正常"]
-var datas = ["正常", "报警", "正常", "报警", "报警", "报警", "报警", "正常", "正常"]
+//隐藏所有的兄弟元素
+function HiddenBrother(id) {
+    $(id).siblings().map(function(index, sy) {
+        sy.style.display = "none"
+    })
+}
 
 let FunObj = {
     EnvironSwitch: function() {
         switch (this.id) {
             case "NoWaterleakage":
-                Environmental.waterLeakage.style.display = "block";
-                Environmental.TempAndHumi.style.display = "none";
-                Environmental.rightAirConditioner.style.display = "none";
-                Change("water-leakage", 1);
+                // 定时器， 根据后端数据实时更新
+                // intervalId = setInterval(function() {
+                //     console.log("打开定时器！！")
+                //     Waterleakage()
+                // }, 5000);
+                Waterleakage()
+                HiddenBrother(Environmental.waterLeakage)
                 break;
             case "PrecisionAir":
-                Environmental.rightAirConditioner.style.display = "block";
-                Environmental.TempAndHumi.style.display = "none";
-                Environmental.waterLeakage.style.display = "none";
-                for (var i = 0; i < datas.length; i++) {
-                    AlarmStatus("AlarmStatus", datas[i], i)
-                };
-                for (var s = 0; s < data.length; s++) {
-                    AirChange("AirState", data[s], s)
-                };
-                document.getElementById("right-AirConditioner").children[1].children[0].innerHTML = "2号精密空调"
-                document.getElementById("right-temperature").innerHTML = "温度:30℃"
-                document.getElementById("right-humidity").innerHTML = "湿度:70%"
+                precisionAir()
+                HiddenBrother(Environmental.rightAirConditioner)
+                break;
+            case "SmokeControl":
+                SmokeControl()
+                HiddenBrother(Environmental.SmokeSensation)
                 break;
             default:
-                Environmental.TempAndHumi.style.display = "block";
-                Environmental.waterLeakage.style.display = "none";
-                Environmental.rightAirConditioner.style.display = "none"
-                document.getElementById("TempAndHumi-temperature").children[1].innerHTML = "30℃"
-                document.getElementById("TempAndHumi-humidity").children[1].innerHTML = "90%"
-                AJAX('GET', "http://192.168.1.42:8080/software/crac/getCracManageAll", '', true, function(res) {
-                    console.log(res);
-                })
+                // 停止控制器
+                // clearInterval(intervalId)
+                TempAndHum()
+                HiddenBrother(Environmental.TempAndHumi)
         };
     }
 }
 
-//精密空调
-var AirChange = function(id, content, Serial) {
-    if (Serial < 3 && content == "正常") {
-        document.getElementById(id).children[1].children[Serial].style.color = 'rgb(68,165,148)'
-        document.getElementById(id).children[1].children[Serial].innerHTML = content
-    } else if (Serial < 3 && content == "报警") {
-        document.getElementById(id).children[1].children[Serial].innerHTML = content
-        document.getElementById(id).children[1].children[Serial].style.color = 'rgb(165,68,68)'
-    } else if (Serial >= 3 && content == "正常") {
-        document.getElementById(id).children[3].children[Serial - 3].style.color = 'rgb(68,165,148)'
-        document.getElementById(id).children[3].children[Serial - 3].innerHTML = content
-    } else if (Serial >= 3 && content == "报警") {
-        document.getElementById(id).children[3].children[Serial - 3].style.color = 'rgb(165,68,68)'
-        document.getElementById(id).children[3].children[Serial - 3].innerHTML = content
-    }
-}
+//非定位漏水和烟感根据内容显示
+var Change = function(id, status, number) {
+    var ChangeId = document.getElementById(id).children[number].children[0].children[2].children[1]
+    if (status == 0) {
+        ChangeId.innerHTML = "正常"
+        ChangeId.style.backgroundColor = 'rgb(68,165,148)'
 
-//报警状态
-var AlarmStatus = function(id, content, Serial) {
-    if (Serial < 3 && content == "正常") {
-        document.getElementById(id).children[1].children[Serial].innerHTML = content
-    } else if (Serial < 3 && content == "报警") {
-        document.getElementById(id).children[1].children[Serial].innerHTML = content
-        document.getElementById(id).children[1].children[Serial].style.backgroundColor = 'rgb(165,68,68)'
-    } else if (Serial >= 3 && Serial < 6 && content == "正常") {
-        document.getElementById(id).children[3].children[Serial - 3].innerHTML = content
-    } else if (Serial >= 3 && Serial < 6 && content == "报警") {
-        document.getElementById(id).children[3].children[Serial - 3].innerHTML = content
-        document.getElementById(id).children[3].children[Serial - 3].style.backgroundColor = 'rgb(165,68,68)'
-    } else if (Serial >= 6 && content == "正常") {
-        document.getElementById(id).children[5].children[Serial - 6].innerHTML = content
-    } else if (Serial >= 6 && content == "报警") {
-        document.getElementById(id).children[5].children[Serial - 6].innerHTML = content
-        document.getElementById(id).children[5].children[Serial - 6].style.backgroundColor = 'rgb(165,68,68)'
-    }
-}
-
-//非定位漏水根据内容显示
-var Change = function(id, content) {
-    document.getElementById(id).children[3].children[1].innerHTML = content
-    if (content == 0) {
-        document.getElementById(id).children[3].children[1].innerHTML = "正常"
-        document.getElementById(id).children[3].children[1].style.backgroundColor = 'rgb(68,165,148)'
-        document.getElementById(id).children[3].children[0].innerHTML = 'DI0'
-        document.getElementById(id).children[1].children[0].innerHTML = '非定位漏水'
-
+    } else if (status == 2) {
+        ChangeId.innerHTML = "报警"
+        ChangeId.style.backgroundColor = 'rgb(165,68,68)'
     } else {
-        document.getElementById(id).children[3].children[1].innerHTML = "报警"
-        document.getElementById(id).children[3].children[1].style.backgroundColor = 'rgb(165,68,68)'
-        document.getElementById(id).children[3].children[0].innerHTML = 'DI1'
-        document.getElementById(id).children[1].children[0].innerHTML = '烟感'
+        ChangeId.innerHTML = "关闭"
+        ChangeId.style.backgroundColor = 'rgb(179,179,179)'
     }
 }
 
@@ -119,27 +77,22 @@ var Change = function(id, content) {
 Environmental.NoWaterleakage.addEventListener("click", FunObj.EnvironSwitch)
 Environmental.PrecisionAir.addEventListener("click", FunObj.EnvironSwitch)
 Environmental.ControlTemp.addEventListener("click", FunObj.EnvironSwitch)
+Environmental.SmokeControl.addEventListener("click", FunObj.EnvironSwitch)
 
-// document.getElementById('NoWaterleakage').addEventListener('click', function() {
-//     console.log(1)
-// });
 
 window.onload = function() {
-    document.getElementById("TempAndHumi-temperature").children[1].innerHTML = "30℃"
-    document.getElementById("TempAndHumi-humidity").children[1].innerHTML = "90%"
+    TempAndHum()
         // AJAX() 来自 request.js; 第二个参数是后端接口, 第三个参数是请求参数
-    AJAX('GET', '', '', true, function(res) {
-        console.log(res);
+        // AJAX('GET', '', '', true, function(res) {
+        //     console.log(res);
         // res 因为不知道后端返回的格式是什么，所以请根据实际的数据
-
         // for(let i = 0; i < 【请根据实际的返回数据长度】; i++){
         // 创建 li 元素，并把 li 元素插入到 ul 中
         //     var li = document.createElement('li');
         //     li.innerHTML = '【请根据实际的返回数据内容】';
         //     mainLeft.appendChild(li);
         // }
-
-    });
+        // });
 }
 management.onclick = function() {
     alert('没有设计图, 还没有做')
@@ -170,7 +123,7 @@ shutdown.addEventListener('click', function() {
 
     var boo = confirm("您确定要退出登录吗");
     if (boo == true) {
-        window.location.href = '../Login/login.html'
+        window.location.href = '../login.html'
     } else {
         return false
     }

@@ -1,6 +1,6 @@
 var username = document.getElementById('username'); // 账号
 var password = document.getElementById('password'); // 密码
-// var loginBtn = document.getElementById('loginBtn'); // 登录按钮
+var loginBtn = document.getElementById('loginBtn'); // 登录按钮
 
 var forget = document.getElementById('forget'); // 忘记密码/注册
 var memorization = document.getElementById('memorization'); // 记住密码
@@ -17,56 +17,67 @@ forget.onclick = function() {
 }
 
 // 输入框获取焦点隐藏 账号或密码不能为空红色字体
-// username.onfocus = function(){
-//     fonts[0].style.display = 'none';
-// };
-// password.onfocus = function(){
-//     fonts[1].style.display = 'none';
-// };
+username.onchange = function() {
+    fonts[0].style.display = 'none';
+};
+password.onchange = function() {
+    fonts[1].style.display = 'none';
+};
 
-loginBtn.addEventListener('click', function() {
-    window.location.href = '../HomePage/homepage.html'
-    console.log(1)
-})
+// loginBtn.addEventListener("click", function() {
+
+// })
 
 // 登录
-// loginBtn.addEventListener('click', function(){
-//     this.style.background = '#556e55';
+loginBtn.addEventListener('click', function() {
+    this.style.background = '#556e55';
+    let Data = {
+        password: password.value,
+        username: username.value
+    }
+    if (Data.username == '') {
+        fonts[0].innerHTML = '账号或密码不能为空';
+        fonts[0].style.display = 'block';
 
-// let Data = 'username='+username.value + '&password='+ data.password;
+    } else if (Data.password == '') {
+        fonts[1].innerHTML = '账号或密码不能为空'
+        fonts[1].style.display = 'block';
 
-//     if(username.value == ''){     
-//         fonts[0].innerHTML = '账号或密码不能为空';
-//         fonts[0].style.display = 'block';
+    } else {
+        AJAX('POST', 'http://192.168.1.42:8080/software/login?password=' + Data.password + '&username=' + Data.username, "", true, function(res, status) {
+            if (status !== 200 && typeof(status) !== "undefined") {
+                alert("网络请求错误！请重试！")
+            } else if (status == 200 && res.zt == "ok") {
+                window.location.href = './HomePage/homepage.html'
+                console.log(1)
+            } else if (status == 200 && res.zt == "error") {
+                //登录成功跳转到主页
+                for (let i = 0; i < fonts.length; i++) {
+                    fonts[i].innerHTML = '账号或密码错误';
+                    fonts[i].style.display = 'block';
+                }
+            }
+        })
+    }
+});
 
-//     }else if(password.value == ''){
-//         fonts[1].innerHTML = '账号或密码不能为空'
-//         fonts[1].style.display = 'block';
+// 获取用户cookie
+window.onload = function() {
 
-//     }else{
-//         // console.log(username.value, password.value)
-
-//         // 登录 ajax, 第二个参数是请求接口
-//         AJAX('POST', '', Data, true, function(res){
-
-//             if(res.zt == 'error'){
-//                 for(let i = 0; i < fonts.length; i++){
-//                     fonts[i].innerHTML = '账号或密码错误';
-//                     fonts[i].style.display = 'block';
-//                 }
-
-//             }else if(res.zt == 'ok'){
-//                 var result = res
-//                 console.log(result);
-
-//                 // 登录成功跳转到主页
-//                 window.location.href = '../HomePage/homepage.html'     
-//             }
-
-//         })
-//     }
-// });
-
+    var UserName = document.cookie.match(
+        new RegExp("(^| )" + "UserName" + "=([^;]*)(;|$)")
+    );
+    var Password = document.cookie.match(
+        new RegExp("(^| )" + "Password" + "=([^;]*)(;|$)")
+    );
+    if (UserName === null || Password === null) {
+        checkbox.checked = false
+    } else {
+        checkbox.checked = true
+        username.value = UserName[2]
+        password.value = Password[2]
+    }
+}
 
 // 忘记密码?注册
 // forget.onclick = function(){
@@ -82,12 +93,26 @@ loginBtn.addEventListener('click', function() {
 
 // 记住密码
 checkbox.onclick = function() {
-    // var boo = this.checked ? true : false;
-    // if(boo){
-    //     console.log('真')
-
-    // }else{
-    //     console.log('假')        
-    // }
-    alert('记住密码功能还没有做')
+    var boo = this.checked ? true : false;
+    if (boo) {
+        var Days = 7;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000); //时分秒，cookie过期时间
+        document.cookie =
+            "UserName" + "=" + escape(username.value) + ";expires=" + exp.toGMTString(); //"Name"是键,escape(是值)
+        document.cookie =
+            "Password" + "=" + escape(password.value) + ";expires=" + exp.toGMTString();
+    } else {
+        // 原生js是无法直接删除cookie的，当cookie的时间过期后浏览器会自动删除cookie。
+        var cookieKeys = document.cookie.match(/[^ =;]+(?=\=)/g); // 获取cookie
+        var date = new Date(); // 获取当前时间
+        date.setTime(date.getTime() - 10000); // 改变当前时间
+        if (cookieKeys) {
+            // 循环设置cookie过期时间
+            for (var i = 0; i < cookieKeys.length; i++) {
+                document.cookie =
+                    cookieKeys[i] + "=0; expires=" + date.toGMTString() + "; path=/";
+            }
+        }
+    }
 }

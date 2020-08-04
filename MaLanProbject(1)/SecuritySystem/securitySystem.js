@@ -110,7 +110,7 @@ shutdown.addEventListener('click', function() {
     var boo = confirm("您确定要退出登录吗");
     console.log(boo)
     if (boo == true) {
-        window.location.href = '../Login/login.html'
+        window.location.href = '../login.html'
     } else {
         return false
     }

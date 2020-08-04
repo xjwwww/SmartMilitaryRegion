@@ -1,118 +1,78 @@
+html {
+    /* 根据设计图大小设计的响应式单位 */
+    font-size: calc(100vw / 1280 * 100);
+}
+
 li {
     list-style: none;
 }
 
 .main .main-right>div:nth-child(2) {
+    display: none;
+    height: 88vh;
+    overflow: auto;
+    font-size: 0.14rem;
+}
+
+.main .main-right>div:nth-child(2) .AllAir {
     width: 86vw;
     height: 70vh;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.8vw;
     margin: 2vh 0 0 1vw;
     color: #fff;
-    display: none;
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(1) {
-    font-size: 1.3vw;
+.main .main-right>div:nth-child(2) .AllAir>div:nth-child(1) {
     padding-left: 3.7vw;
     padding-top: 5.5vh;
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(2) {
-    font-size: 1.3vw;
+.main .main-right>div:nth-child(2) .AllAir>div:nth-child(2) {
     padding-left: 3.9vw;
     margin-top: 7vh;
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(2)>text:nth-child(2) {
-    margin-left: 50vw;
-}
-
-.main .main-right>div:nth-child(2)>div:nth-child(3) {
-    display: flex;
-    flex-direction: row;
-}
-
-.main .main-right>div:nth-child(2)>div:nth-child(3) .right-humidity,
-.main .main-right>div:nth-child(2)>div:nth-child(3) .right-temperature {
-    margin-top: 6vh;
-    font-size: 1vw;
-    margin-left: 4.5vw;
-    background-color: #DE8C10;
-    width: 10vw;
-    line-height: 6.4vh;
-    border-radius: 10vw;
-    display: flex;
-    justify-content: center;
-}
-
-
-/* 温湿度图标 */
-
-.main .main-right>div:nth-child(2)>div:nth-child(3) .right-humidity .humidity,
-.main .main-right>div:nth-child(2)>div:nth-child(3) .right-temperature .temperature {
-    height: 3.3vh;
-    width: 1.17vw;
-    margin: auto 1vw auto 0.3vw;
-}
-
-.main .main-right>div:nth-child(2)>div:nth-child(3) .right-humidity {
-    background-color: seagreen;
-}
-
-
-/* 温湿度图标下的 */
-
-.main .main-right>div:nth-child(2)>div:nth-child(4) {
+.main .main-right>div:nth-child(2) .AirState {
     margin-left: 6vw;
-    font-size: 1vw;
     margin-top: 3vh;
     width: 25vw;
     height: 20vh;
     display: flex;
-    flex-direction: row;
+    float: left;
+    flex-direction: row
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(4)>ul:nth-child(2) {
-    margin-right: 7.5vw;
-}
-
-.main .main-right>div:nth-child(2)>div:nth-child(4) li {
+.main .main-right>div:nth-child(2) .AirState li {
     margin-top: 5vh;
 }
 
-
-/* 报警状态 */
-
-.main .main-right>div:nth-child(2)>div:nth-child(5) {
-    position: absolute;
-    top: 41vh;
-    left: 48vw;
+.main .main-right>div:nth-child(2) .AlarmStatus {
     display: flex;
     flex-direction: row;
     justify-items: center;
     text-align: center;
-    font-size: 1vw;
+    margin-left: 36.5vw;
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(5) ul li {
+.main .main-right>div:nth-child(2) .AlarmStatus ul li {
     margin-top: 5vh;
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(5)>ul:nth-child(5),
-.main .main-right>div:nth-child(2)>div:nth-child(5)>ul:nth-child(3),
-.main .main-right>div:nth-child(2)>div:nth-child(5)>ul:nth-child(1) {
-    text-align: right;
-    margin-left: 4vw;
-    margin-right: 1vw;
+.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(6) li,
+.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(4) li,
+.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(2) li {
+    background-color: rgb(68, 165, 148);
+    width: 5.3vw;
+    border-radius: 5vw;
     line-height: 4.5vh;
 }
 
-.main .main-right>div:nth-child(2)>div:nth-child(5)>ul:nth-child(6) li,
-.main .main-right>div:nth-child(2)>div:nth-child(5)>ul:nth-child(4) li,
-.main .main-right>div:nth-child(2)>div:nth-child(5)>ul:nth-child(2) li {
-    background-color: seagreen;
-    width: 5vw;
-    border-radius: 5vw;
+.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(1) li,
+.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(3) li,
+.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(5) li {
+    text-align: right;
+    margin-left: 4vw;
+    margin-right: 1vw;
     line-height: 4.5vh;
 }
