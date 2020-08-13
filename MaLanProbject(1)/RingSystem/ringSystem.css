@@ -31,6 +31,10 @@ body {
     clear: both;
 }
 
+.header .header-right :hover {
+    cursor: pointer;
+}
+
 .header .ring-box .ring-icon,
 .header .ring-box .ring-text {
     float: left;
@@ -112,6 +116,7 @@ body {
     /* border: 1px solid red; */
     margin-right: 1.5vw;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .header .header-middle .middle-box .operations {

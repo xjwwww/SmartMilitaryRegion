@@ -1,4 +1,12 @@
 // EChart图标
+
+//获取当前设备的的宽度
+let nowClientWidth = window.innerWidth;
+//设计自适应单位
+function nowSize(val, initWidth = 1280) {
+    return val * (nowClientWidth / initWidth);
+}
+
 function Echar(number) {
     var myChart = echarts.init(document.getElementById('TempAndHumiRealTime').children[number].children[0].children[1]);
 
@@ -16,14 +24,23 @@ function Echar(number) {
             }
         },
         grid: {
-            top: 40,
-            bottom: 40
+            top: nowSize(50),
+            bottom: nowSize(37)
         },
         xAxis: [{
                 type: 'category',
                 axisTick: {
                     show: false
                 },
+                //坐标轴字体
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: colors[1], //更改坐标轴文字颜色
+                        fontSize: nowSize(11.5) //更改坐标轴文字大小
+                    }
+                },
+                //坐标轴
                 axisLine: {
                     show: false,
                     onZero: false,
@@ -51,6 +68,14 @@ function Echar(number) {
                     onZero: false,
                     lineStyle: {
                         color: colors[0]
+                    }
+                },
+                //坐标轴字体
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: colors[0], //更改坐标轴文字颜色
+                        fontSize: nowSize(11.5) //更改坐标轴文字大小
                     }
                 },
                 axisPointer: {
@@ -81,6 +106,14 @@ function Echar(number) {
             },
             splitLine: {
                 show: false
+            },
+            //坐标轴字体
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: colors[0], //更改坐标轴文字颜色
+                    fontSize: nowSize(11.5) //更改坐标轴文字大小
+                }
             }
         }, {
             min: 0,
@@ -100,6 +133,14 @@ function Echar(number) {
             },
             splitLine: {
                 show: false
+            },
+            //坐标轴字体
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: colors[1], //更改坐标轴文字颜色
+                    fontSize: nowSize(11.5) //更改坐标轴文字大小
+                }
             }
         }],
         series: [{

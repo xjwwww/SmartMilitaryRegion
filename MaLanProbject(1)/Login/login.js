@@ -30,7 +30,6 @@ password.onchange = function() {
 
 // 登录
 loginBtn.addEventListener('click', function() {
-    this.style.background = '#556e55';
     let Data = {
         password: password.value,
         username: username.value
@@ -44,12 +43,11 @@ loginBtn.addEventListener('click', function() {
         fonts[1].style.display = 'block';
 
     } else {
-        AJAX('POST', 'http://192.168.1.42:8080/software/login?password=' + Data.password + '&username=' + Data.username, "", true, function(res, status) {
+        AJAX('POST', 'software/login?password=' + Data.password + '&username=' + Data.username, "", true, function(res, status) {
             if (status !== 200 && typeof(status) !== "undefined") {
                 alert("网络请求错误！请重试！")
             } else if (status == 200 && res.zt == "ok") {
                 window.location.href = './HomePage/homepage.html'
-                console.log(1)
             } else if (status == 200 && res.zt == "error") {
                 //登录成功跳转到主页
                 for (let i = 0; i < fonts.length; i++) {
@@ -63,7 +61,6 @@ loginBtn.addEventListener('click', function() {
 
 // 获取用户cookie
 window.onload = function() {
-
     var UserName = document.cookie.match(
         new RegExp("(^| )" + "UserName" + "=([^;]*)(;|$)")
     );
@@ -116,3 +113,11 @@ checkbox.onclick = function() {
         }
     }
 }
+
+//页面还在加载的过程中
+// document.onreadystatechange = function() {
+//     if (document.readyState == "complete") {
+//         alert(1)
+//         document.getElementById("page").style.display = "none"
+//     }
+// }

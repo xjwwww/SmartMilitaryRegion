@@ -1,3 +1,5 @@
+//温湿度
+
 //同步处理，先执行请求数据的方法
 async function TempAndHum() {
     var TempAndHumData = []
@@ -5,12 +7,15 @@ async function TempAndHum() {
         TempAndHumData = data
     })
     TempAndHumView(TempAndHumData)
+
+    //切换温湿度的页面
+    TempAndHumiChangePage()
 }
 
 //获取温湿度后端数据
 function GetTempAndHumData() {
     return new Promise((resolve, reject) => {
-        AJAX('GET', 'http://192.168.1.42:8080/software/humiture/findHumitureStatus', '', true, function(res) {
+        AJAX('GET', 'software/humiture/findHumitureStatus', '', true, function(res) {
             if (typeof res == "object") {
                 resolve(res)
             }
@@ -20,7 +25,6 @@ function GetTempAndHumData() {
 
 //温湿度
 function TempAndHumView(TempAndHumData) {
-    console.log(TempAndHumData)
     var htmlStr = "";
     for (let h = 0; h < TempAndHumData.length; h++) {
         htmlStr +=
@@ -47,4 +51,31 @@ function TempAndHumView(TempAndHumData) {
         Echar(s)
     }
     Environmental.TempAndHumi.style.display = "block";
+}
+
+
+//切换
+function TempAndHumiChangePage() {
+    const Type = new Map([
+        [0, 'TempAndHumiRealTime'],
+        [1, 'TempAndHumiWarning'],
+        [2, 'HistoricalCurve'],
+        [3, 'DeviceManagement']
+    ])
+    let TempAndHumiChange = document.getElementById("TempAndHumi").children[0]
+    let span = TempAndHumiChange.getElementsByTagName("span")
+    for (let i = 0; i < span.length; i++) {
+        let spanChild = span[i];
+        spanChild.index = i; //给当前div下的每个span元素添加index属性;
+        spanChild.onclick = function() {
+            TempAndHumiChange.children[this.index].style.color = "#FFFFFF"
+            document.getElementById(Type.get(this.index)).style.display = "flex"
+            for (let i = 0; i < span.length; i++) {
+                if (i !== this.index) {
+                    TempAndHumiChange.children[i].style.color = "#888888"
+                    document.getElementById(Type.get(i)).style.display = "none"
+                }
+            }
+        }
+    }
 }

@@ -2,17 +2,19 @@
 
 //同步处理，先执行请求数据的方法
 async function SmokeControl() {
-    var SmokeData = []
+    let SmokeData = []
     await GetSmokeData().then(data => {
         SmokeData = data
     })
     SmokeView(SmokeData)
+        //切换烟感的页面
+    SmokChangePage()
 }
 
 //获取烟感控制设备的后端数据
 function GetSmokeData() {
     return new Promise((resolve, reject) => {
-        AJAX('GET', 'http://192.168.1.42:8080/software/ktr8052/getKtr8052Status/1', '', true, function(res) {
+        AJAX('GET', 'software/ktr8052/getKtr8052Status/1', '', true, function(res) {
             if (typeof res == "object") {
                 resolve(res)
             }
@@ -44,4 +46,22 @@ function SmokeView(SmokeData) {
         Change("SmokRealTime", SmokeData[j].status, j);
     }
     Environmental.SmokeSensation.style.display = "block";
+}
+
+//切换
+
+function SmokChangePage() {
+    let SmokChange = document.getElementById("SmokeSensation").children[0]
+    SmokChange.children[1].addEventListener('click', function() {
+        document.getElementById("SmokRealTime").style.display = "none"
+        document.getElementById("SmokWarning").style.display = "block"
+        document.getElementById("SmokeSensation").children[0].children[0].style.color = "#8888"
+        document.getElementById("SmokeSensation").children[0].children[1].style.color = "#FFFFFF"
+    })
+    SmokChange.children[0].addEventListener('click', function() {
+        document.getElementById("SmokRealTime").style.display = "flex"
+        document.getElementById("SmokWarning").style.display = "none"
+        document.getElementById("SmokeSensation").children[0].children[0].style.color = "#FFFFFF"
+        document.getElementById("SmokeSensation").children[0].children[1].style.color = "#8888"
+    })
 }

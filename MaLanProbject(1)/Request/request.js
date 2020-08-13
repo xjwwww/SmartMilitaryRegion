@@ -1,5 +1,11 @@
 // 请求方式、请求接口、请求参数、异步或同步、回调函数
 function AJAX(method, url, data, flag, callback) {
+    xmlHttp = GetXmlHttpObject();
+    if (xmlHttp == null) {
+        alert('您的浏览器不支持AJAX！');
+        return;
+    }
+
     // callback(data)
     let xhr = null;
 
@@ -15,7 +21,9 @@ function AJAX(method, url, data, flag, callback) {
     if (method == "GET") {
         //初始化
         if (data == '') {
-            xhr.open(method, url, flag);
+            //坐统一的接口管理
+            let NewUrl = "http://192.168.1.42:8080/" + url
+            xhr.open(method, NewUrl, flag);
 
         } else {
             // data 传过来必须是字符串
@@ -26,13 +34,8 @@ function AJAX(method, url, data, flag, callback) {
         xhr.send();
 
     } else if (method == "POST") {
-        // xmlHttp = GetXmlHttpObject();
-        // if (xmlHttp == null) {
-        //     alert('您的浏览器不支持AJAX！');
-        //     return;
-        // }
-        // var urls = url + "?password=" + data.password + "&username=" + data.username
-        xhr.open(method, url, flag);
+        let NewUrl = "http://192.168.1.42:8080/" + url
+        xhr.open(method, NewUrl, flag);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.send(data);
     }
@@ -43,7 +46,6 @@ function AJAX(method, url, data, flag, callback) {
             var backData = JSON.parse(xhr.response);
             // 回调函数，返回数据
             callback(backData, xhr.status);
-
         } else {
             callback('');
         }
@@ -60,19 +62,3 @@ function GetXmlHttpObject() {
     }
     return xmlhttp;
 }
-
-// function AJAX(method, url, data){
-//     $.ajax({
-//         url: url,
-//         type: method,
-//         data: data,
-//         dataType: 'json',
-//         // async: flag, // 异步或同步
-//         success: function(res){
-//             console.log(res)
-//         },
-//         error: function(err){
-//             console.log(err)
-//         }
-//     })
-// }

@@ -1,10 +1,5 @@
 /* 非定位漏水 */
 
-
-/* :root {
-    font-size: calc(100vw / 1280 * 100);
-} */
-
 .main .main-right>div:nth-child(1) {
     display: none;
 }

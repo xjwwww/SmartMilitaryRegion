@@ -120,7 +120,7 @@ shutdown.addEventListener('click', function() {
 
 // ------------------- 处理海康威视插件视频窗口 --------------------
 // 查看监控视频
-VideoPlugin();
+// VideoPlugin();
 
 // 点击停止预览
 document.getElementById('stopPreview').addEventListener('click', function() {
@@ -170,6 +170,7 @@ function VideoPlugin() {
         szColorProperty: 'plugin-background:575757; sub-background:303030; sub-border:575757; sub-border-select:FFFF00',
         cbSelWnd: function(xmlDov) {
             // console.log('118')
+            alert("选择对应的窗口")
             console.log(xmlDov)
         },
         cbInitPluginComplete: function() {

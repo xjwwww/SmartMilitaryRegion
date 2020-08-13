@@ -21,7 +21,7 @@ FourthFloorCameras.fourthSixRoom.addEventListener("click", function() { GetVoid(
 
 //请求视频方法
 function GetVoid(floor, roomNumber) {
-    AJAX('GET', "http://192.168.1.42:8080/ktr-ml/sheXiangou" + "/" + floor + "/" + roomNumber, '', true, function(res) {
+    AJAX('GET', "ktr-ml/sheXiangou" + "/" + floor + "/" + roomNumber, '', true, function(res) {
         console.log(res);
     })
 }

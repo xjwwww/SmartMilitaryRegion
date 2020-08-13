@@ -15,12 +15,19 @@
     font-size: 1.15vw;
 }
 
-.main .main-right>div:nth-child(3)>div:nth-child(1):hover {
+.main .main-right>div:nth-child(3)>div:nth-child(1) span {
+    margin-left: 2vw;
+}
+
+.main .main-right>div:nth-child(3)>div:nth-child(1) span:hover {
     cursor: pointer;
 }
 
-.main .main-right>div:nth-child(3)>div:nth-child(1) span {
-    margin-left: 2vw;
+
+/* 当前元素的所有兄弟元素 */
+
+.main .main-right>div:nth-child(3)>div:nth-child(1)>span:nth-child(1)~span {
+    color: #8888;
 }
 
 .TempAndHumiRealTime {

@@ -74,6 +74,7 @@
                 <!-- 根据后端数据进行动态的插入数据 -->
                 <div id="RealTime" class="RealTime">
                 </div>
+                <!-- 报警数据 -->
                 <div id="WaterWarning" style="display: none;">
                     <div>报警数据</div>
                 </div>
@@ -86,11 +87,25 @@
             <div id="TempAndHumi">
                 <div>
                     <span>实时数据</span>
-                    <span>数据报警</span>
+                    <span>报警数据</span>
                     <span>历史曲线</span>
                     <span>设备管理</span>
                 </div>
-                <div id="TempAndHumiRealTime" class="TempAndHumiRealTime">
+                <div id="TempAndHumiContent">
+                    <div id="TempAndHumiRealTime" class="TempAndHumiRealTime">
+                    </div>
+                    <!-- 报警数据 -->
+                    <div id="TempAndHumiWarning" style="display: none;">
+                        <div>报警数据</div>
+                    </div>
+                    <!-- 历史曲线 -->
+                    <div id="HistoricalCurve" style="display: none;">
+                        <div>历史曲线</div>
+                    </div>
+                    <!-- 设备管理 -->
+                    <div id="DeviceManagement" style="display: none;">
+                        <div>设备管理</div>
+                    </div>
                 </div>
             </div>
             <!-- 烟感 -->
@@ -101,6 +116,10 @@
                 </div>
                 <!-- 根据后端数据进行动态的插入数据 -->
                 <div id="SmokRealTime" class="SmokRealTime">
+                </div>
+                <!-- 报警数据 -->
+                <div id="SmokWarning" style="display: none;">
+                    <div>报警数据</div>
                 </div>
             </div>
     </main>

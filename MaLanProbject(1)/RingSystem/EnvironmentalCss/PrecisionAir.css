@@ -15,8 +15,8 @@ li {
 }
 
 .main .main-right>div:nth-child(2) .AllAir {
-    width: 86vw;
-    height: 70vh;
+    width: 85vw;
+    height: 60vh;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.8vw;
     margin: 2vh 0 0 1vw;
@@ -33,19 +33,26 @@ li {
     margin-top: 7vh;
 }
 
+
+/* 精密空调下的状态 */
+
 .main .main-right>div:nth-child(2) .AirState {
     margin-left: 6vw;
-    margin-top: 3vh;
+    margin-top: 2.5vh;
     width: 25vw;
     height: 20vh;
     display: flex;
     float: left;
-    flex-direction: row
+    flex-direction: row;
+    font-size: 1vw;
 }
 
 .main .main-right>div:nth-child(2) .AirState li {
-    margin-top: 5vh;
+    margin-top: 3.5vh;
 }
+
+
+/* 报警状态下的状态 */
 
 .main .main-right>div:nth-child(2) .AlarmStatus {
     display: flex;
@@ -53,11 +60,13 @@ li {
     justify-items: center;
     text-align: center;
     margin-left: 36.5vw;
+    font-size: 1vw;
 }
 
-.main .main-right>div:nth-child(2) .AlarmStatus ul li {
-    margin-top: 5vh;
-}
+
+/* .main .main-right>div:nth-child(2) .AlarmStatus ul li {
+    margin-top: 3.5vh;
+} */
 
 .main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(6) li,
 .main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(4) li,

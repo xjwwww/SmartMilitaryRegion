@@ -2,30 +2,20 @@
 //同步处理，先执行请求数据的方法
 async function Waterleakage() {
     let WaterData = []
-    let WaterChange = document.getElementById("water-leakage").children[0]
+
     await GetWaterData().then(data => {
         WaterData = data
     })
     WaterView(WaterData)
-        //切换非定位漏水的页面
-    WaterChange.children[0].addEventListener("click", function() {
-        document.getElementById("RealTime").style.display = "flex"
-        document.getElementById("WaterWarning").style.display = "none"
-        document.getElementById("water-leakage").children[0].children[1].style.color = "#8888"
-        document.getElementById("water-leakage").children[0].children[0].style.color = "#FFFFFF"
-    })
-    WaterChange.children[1].addEventListener("click", function() {
-        document.getElementById("WaterWarning").style.display = "block"
-        document.getElementById("RealTime").style.display = "none"
-        document.getElementById("water-leakage").children[0].children[1].style.color = "#FFFFFF"
-        document.getElementById("water-leakage").children[0].children[0].style.color = "#8888"
-    })
+
+    //切换非定位漏水的页面
+    WaterChangePage()
 }
 
 //获取非定位漏水设备的后端数据
 function GetWaterData() {
     return new Promise((resolve, reject) => {
-        AJAX('GET', 'http://192.168.1.42:8080/software/ktr8052/getKtr8052Status/1', '', true, function(res) {
+        AJAX('GET', 'software/ktr8052/getKtr8052Status/1', '', true, function(res) {
             if (typeof res == "object") {
                 data = res
                 resolve(res)
@@ -58,4 +48,22 @@ function WaterView(WaterData) {
         Change("RealTime", WaterData[j].status, j);
     }
     Environmental.waterLeakage.style.display = "block";
+}
+
+//切换
+
+function WaterChangePage() {
+    let WaterChange = document.getElementById("water-leakage").children[0]
+    WaterChange.children[0].addEventListener("click", function() {
+        document.getElementById("RealTime").style.display = "flex"
+        document.getElementById("WaterWarning").style.display = "none"
+        document.getElementById("water-leakage").children[0].children[1].style.color = "#8888"
+        document.getElementById("water-leakage").children[0].children[0].style.color = "#FFFFFF"
+    })
+    WaterChange.children[1].addEventListener("click", function() {
+        document.getElementById("WaterWarning").style.display = "block"
+        document.getElementById("RealTime").style.display = "none"
+        document.getElementById("water-leakage").children[0].children[1].style.color = "#FFFFFF"
+        document.getElementById("water-leakage").children[0].children[0].style.color = "#8888"
+    })
 }
