@@ -3,8 +3,9 @@
 //获取当前设备的的宽度
 let nowClientWidth = window.innerWidth;
 //设计自适应单位
-function nowSize(val, initWidth = 1280) {
-    return val * (nowClientWidth / initWidth);
+function nowSize(val) {
+    let initWidth = 1280
+    return val * (nowClientWidth / initWidth)
 }
 
 function Echar(number) {

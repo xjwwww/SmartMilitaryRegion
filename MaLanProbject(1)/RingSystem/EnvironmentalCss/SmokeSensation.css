@@ -1,16 +1,13 @@
 /* 烟感样式 */
 
 .main .main-right>div:nth-child(4) {
-    display: none;
-}
-
-.main .main-right>div:nth-child(4) {
     width: 86vw;
     height: 86vh;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.8vw;
     margin: 2vh 0 0 1vw;
     color: #fff;
+    display: none;
 }
 
 .main .main-right>div:nth-child(4)>div:nth-child(1) {

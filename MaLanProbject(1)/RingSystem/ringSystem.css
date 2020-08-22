@@ -6,6 +6,8 @@
 body {
     background: #181818;
     font-family: Source Han Sans CN;
+    width: 100vw;
+    height: 100vh;
 }
 
 .header {
@@ -208,43 +210,64 @@ body {
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
     flex-direction: column;
+    align-items: center;
 }
 
-.main .main-left::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 8vh;
+
+/* .main .main-left>li:nth-child(1) {
+    background-image: url("./imgs/Up.png");
+} */
+
+.main .main-left li {
+    height: 6.5vh;
+    font-size: 1vw;
 }
 
 .main .main-left li,
 .main .main-left>div {
     width: 100%;
-    height: 8.5vh;
     text-align: center;
-    line-height: 8.5vh;
+    line-height: 7.5vh;
     font-size: 1.3vw;
     color: #fff;
     font-family: KaiTi;
     /* font-weight: 700; */
 }
 
-.main .main-left li:hover,
+.main .main-left>li:hover,
 .main .main-left>div:hover {
     background: rgba(255, 255, 255, 0.1);
+}
+
+.main .main-left>div {
+    height: 7vh;
 }
 
 
 /* 返回系统 */
 
-.main .main-left>div {
+.main .main-left>div:nth-last-child(1) {
     position: absolute;
     bottom: 1vh;
+    left: 0;
+    height: 7.5vh;
 }
 
 .main .main-left>div a {
     text-decoration: none;
     color: #fff;
+}
+
+.main-left>div img {
+    width: 2.5vw;
+    height: 4vh;
+}
+
+.main-left>div:nth-child(1),
+.main-left>div:nth-last-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

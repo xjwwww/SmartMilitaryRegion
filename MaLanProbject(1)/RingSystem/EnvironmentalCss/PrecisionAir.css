@@ -1,87 +1,123 @@
-html {
-    /* 根据设计图大小设计的响应式单位 */
-    font-size: calc(100vw / 1280 * 100);
-}
-
 li {
     list-style: none;
 }
 
 .main .main-right>div:nth-child(2) {
-    display: none;
-    height: 88vh;
-    overflow: auto;
-    font-size: 0.14rem;
-}
-
-.main .main-right>div:nth-child(2) .AllAir {
-    width: 85vw;
-    height: 60vh;
+    width: 86vw;
+    height: 86vh;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.8vw;
     margin: 2vh 0 0 1vw;
     color: #fff;
+    padding-bottom: 2vh;
+    display: none;
+    overflow: auto;
 }
 
-.main .main-right>div:nth-child(2) .AllAir>div:nth-child(1) {
-    padding-left: 3.7vw;
+.AirConditionerContent {
+    padding-bottom: 2vh;
+}
+
+.main .main-right>div:nth-child(2)>div:nth-child(1) {
+    font-size: 1.25vw;
+    padding-left: 2.5vw;
     padding-top: 5.5vh;
 }
 
-.main .main-right>div:nth-child(2) .AllAir>div:nth-child(2) {
-    padding-left: 3.9vw;
-    margin-top: 7vh;
-}
-
-
-/* 精密空调下的状态 */
-
-.main .main-right>div:nth-child(2) .AirState {
-    margin-left: 6vw;
-    margin-top: 2.5vh;
-    width: 25vw;
-    height: 20vh;
-    display: flex;
-    float: left;
-    flex-direction: row;
-    font-size: 1vw;
-}
-
-.main .main-right>div:nth-child(2) .AirState li {
-    margin-top: 3.5vh;
-}
-
-
-/* 报警状态下的状态 */
-
-.main .main-right>div:nth-child(2) .AlarmStatus {
+.AllAir {
     display: flex;
     flex-direction: row;
-    justify-items: center;
-    text-align: center;
-    margin-left: 36.5vw;
-    font-size: 1vw;
 }
 
+.AirState {
+    margin: 3vh 1.5vw 0 2.5vw;
+    border-radius: 1vw;
+    width: 38%;
+    height: 35.5vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-top: 2vh;
+    padding-left: 2vw;
+    position: relative;
+}
 
-/* .main .main-right>div:nth-child(2) .AlarmStatus ul li {
-    margin-top: 3.5vh;
-} */
+.AirState>div:nth-child(1) {
+    font-size: 1.2vw;
+}
 
-.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(6) li,
-.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(4) li,
-.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(2) li {
+.AirState>div:nth-child(2) div {
+    display: flex;
+    justify-content: center;
+    width: 11vw;
+    line-height: 6.5vh;
+    margin: 4vh 0 0 2.5vw;
+    border-radius: 10vw;
+    font-size: 1.1vw;
+}
+
+.AirState>div:nth-child(2) div img {
+    height: 3.3vh;
+    width: 1.1vw;
+    margin: auto 1vw auto 0.3vw;
+}
+
+.AirState>div:nth-child(2)>div:nth-child(1) {
+    background-color: rgb(229, 131, 96);
+}
+
+.AirState>div:nth-child(2)>div:nth-child(2) {
     background-color: rgb(68, 165, 148);
-    width: 5.3vw;
-    border-radius: 5vw;
-    line-height: 4.5vh;
+    margin-left: 3.5vw;
 }
 
-.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(1) li,
-.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(3) li,
-.main .main-right>div:nth-child(2) .AlarmStatus>ul:nth-child(5) li {
-    text-align: right;
+.StateType {
+    display: flex;
+    flex-direction: row;
     margin-left: 4vw;
-    margin-right: 1vw;
+    font-size: 1.1vw;
+}
+
+.StateType ul li {
+    margin-top: 3vh;
+}
+
+.AlarmStatus {
+    padding-top: 2vh;
+    margin-top: 3vh;
+    width: 54%;
+    height: 35.5vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1vw;
+    position: relative;
+}
+
+.AlarmStatus>div:nth-child(1) {
+    position: absolute;
+    font-size: 1.2vw;
+    left: 24.5vw;
+}
+
+.AlarmStatus>div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    font-size: 1vw;
+    margin-top: 4vh;
+}
+
+.AlarmStatus>div:nth-child(2) .AirTitle {
+    margin-left: 2vw;
+}
+
+.AirTitle li {
     line-height: 4.5vh;
+    margin: 4.2vh 0 0 1.7vw;
+    text-align: right;
+}
+
+.AirIcon li {
+    display: flex;
+    justify-content: center;
+    width: 5.3vw;
+    border-radius: 30vw;
+    line-height: 4.5vh;
+    margin: 4.2vh 0 0 1vw;
 }

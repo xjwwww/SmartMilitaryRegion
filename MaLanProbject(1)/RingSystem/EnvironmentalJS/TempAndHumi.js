@@ -1,20 +1,111 @@
 //温湿度
 
 //同步处理，先执行请求数据的方法
-async function TempAndHum() {
-    var TempAndHumData = []
-    await GetTempAndHumData().then((data) => {
-        TempAndHumData = data
-    })
-    TempAndHumView(TempAndHumData)
-
-    //切换温湿度的页面
+function TempAndHum() {
+    // GetTempAndHumData().then(function(data) {
+    //     TempAndHumView(data)
+    // })
+    let data = [{
+            "dId": 0,
+            "name": null,
+            "isShow": 0,
+            "diId": 0,
+            "diAddress": null,
+            "diPort": 0,
+            "diIsConnect": 0,
+            "diOperate": 0,
+            "gId": 0,
+            "ehmId": 117,
+            "ehmDeviceAddress": 0,
+            "ehmDeviceFunction": 0,
+            "ehmDeviceName": "温湿度1",
+            "ehmTem": 34.0,
+            "ehmHum": 54.0,
+            "ehmMaxTem": 0.0,
+            "ehmMinTem": 0.0,
+            "ehmMaxHum": 0.0,
+            "ehmMinHum": 0.0,
+            "ehmStatus": 0,
+            "intervalTime": 0
+        },
+        {
+            "dId": 0,
+            "name": null,
+            "isShow": 0,
+            "diId": 0,
+            "diAddress": null,
+            "diPort": 0,
+            "diIsConnect": 0,
+            "diOperate": 0,
+            "gId": 0,
+            "ehmId": 118,
+            "ehmDeviceAddress": 0,
+            "ehmDeviceFunction": 0,
+            "ehmDeviceName": "温湿度2",
+            "ehmTem": 40.0,
+            "ehmHum": 20.0,
+            "ehmMaxTem": 0.0,
+            "ehmMinTem": 0.0,
+            "ehmMaxHum": 0.0,
+            "ehmMinHum": 0.0,
+            "ehmStatus": 2,
+            "intervalTime": 0
+        },
+        {
+            "dId": 0,
+            "name": null,
+            "isShow": 0,
+            "diId": 0,
+            "diAddress": null,
+            "diPort": 0,
+            "diIsConnect": 0,
+            "diOperate": 0,
+            "gId": 0,
+            "ehmId": 118,
+            "ehmDeviceAddress": 0,
+            "ehmDeviceFunction": 0,
+            "ehmDeviceName": "温湿度2",
+            "ehmTem": 40.0,
+            "ehmHum": 20.0,
+            "ehmMaxTem": 0.0,
+            "ehmMinTem": 0.0,
+            "ehmMaxHum": 0.0,
+            "ehmMinHum": 0.0,
+            "ehmStatus": 2,
+            "intervalTime": 0
+        },
+        {
+            "dId": 0,
+            "name": null,
+            "isShow": 0,
+            "diId": 0,
+            "diAddress": null,
+            "diPort": 0,
+            "diIsConnect": 0,
+            "diOperate": 0,
+            "gId": 0,
+            "ehmId": 118,
+            "ehmDeviceAddress": 0,
+            "ehmDeviceFunction": 0,
+            "ehmDeviceName": "温湿度2",
+            "ehmTem": 40.0,
+            "ehmHum": 20.0,
+            "ehmMaxTem": 0.0,
+            "ehmMinTem": 0.0,
+            "ehmMaxHum": 0.0,
+            "ehmMinHum": 0.0,
+            "ehmStatus": 2,
+            "intervalTime": 0
+        }
+    ]
+    TempAndHumView(data)
+        // //切换温湿度的页面
     TempAndHumiChangePage()
 }
 
 //获取温湿度后端数据
 function GetTempAndHumData() {
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject) {
         AJAX('GET', 'software/humiture/findHumitureStatus', '', true, function(res) {
             if (typeof res == "object") {
                 resolve(res)
@@ -72,7 +163,7 @@ function TempAndHumiChangePage() {
             document.getElementById(Type.get(this.index)).style.display = "flex"
             for (let i = 0; i < span.length; i++) {
                 if (i !== this.index) {
-                    TempAndHumiChange.children[i].style.color = "#888888"
+                    TempAndHumiChange.children[i].style.color = "#888"
                     document.getElementById(Type.get(i)).style.display = "none"
                 }
             }
