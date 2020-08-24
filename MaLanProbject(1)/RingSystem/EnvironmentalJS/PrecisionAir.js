@@ -136,10 +136,10 @@ function precisionAirView(precisionAirData) {
             "</div>" +
             "<div style='display: flex;flex-direction: row;'>" +
             "<div>" +
-            "<img src='./imgs/temperature.png'>" +
+            "<img src='../imgs/temperature.png'>" +
             "温度：30℃</div>" +
             "<div>" +
-            "<img src='./imgs/humidity.png'>" +
+            "<img src='../imgs/humidity.png'>" +
             "湿度：20%</div>" +
             "</div>" +
             "<div class='StateType'>" +

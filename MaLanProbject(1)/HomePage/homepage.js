@@ -29,7 +29,7 @@ let Obj = {
         if (this.id == 'securityBox') {
             window.location.href = '../SecuritySystem/securitySystem.html'
         } else if (this.id == 'ringBox') {
-            window.location.href = '../RingSystem/ringSystem.html'
+            window.location.href = '../RingSystem/html/ringSystem.html'
         }
 
     }

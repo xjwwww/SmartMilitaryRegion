@@ -33,6 +33,7 @@ function HiddenBrother(id) {
 
 window.onload = function() {
     TempAndHum()
+    HeaderSwitch()
 }
 management.onclick = function() {
     alert('没有设计图, 还没有做')
@@ -53,7 +54,7 @@ shutdown.addEventListener('click', function() {
 
     var boo = confirm("您确定要退出登录吗");
     if (boo == true) {
-        window.location.href = '../login.html'
+        window.location.href = '../../login.html'
     } else {
         return false
     }

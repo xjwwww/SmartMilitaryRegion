@@ -21,20 +21,50 @@
     </div>
     <script>
         function start() {
-            let divs = document.getElementById("pic")
-            divs.style.display = "block"
-            let is = divs.getElementsByTagName("i")
-            let a = 0.1
-            for (let i = 0; i < is.length; i++) {
-                is[i].style.animation = "load 1.2s " + a + "s" + " infinite"
-                a += 0.1
-                    //animation 第二个参数是动画时间  第三个是对应的启动时间 第四个是定义无限动画
-            }
+            // let divs = document.getElementById("pic")
+            // divs.style.display = "block"
+            // let is = divs.getElementsByTagName("i")
+            // let a = 0.1
+            // for (let i = 0; i < is.length; i++) {
+            //     is[i].style.animation = "load 1.2s " + a + "s" + " infinite"
+            //     a += 0.1
+            //         //animation 第二个参数是动画时间  第三个是对应的启动时间 第四个是定义无限动画
+            // }
+            console.log(filter(condition, data));
         }
 
         function End() {
             document.getElementById("pic").style.display = "none"
         }
+        //假设后端通过接口给我们的数据如下：
+        let data = [{
+                name: 'Andy',
+                age: 13
+            }, {
+                name: 'Jack',
+                age: 14
+            }, {
+                name: 'Lucy',
+                age: 12
+            }]
+            //在实际项目中，我们需要根据筛选框中的条件来实现数据的过滤,下面为过滤方法：
+            //@param condition 过滤条件
+            //@param data 需要过滤的数据
+            //toLowerCase 将字符串转为小写  trim 去除字符串中前后的空格
+        let filter = (condition, data) => {
+                return data.filter(item => {
+                    return Object.keys(condition).every(key => {
+                        return String(item[key]).toLowerCase().includes(
+                            String(condition[key]).trim().toLowerCase())
+                    })
+                })
+            }
+            //假设选择的条件为name中带字母a的元素
+        var condition = {
+            name: 'a',
+            age: 15
+        }
+        filter(condition, data) //[ {name: 'Andy',age: 13},{name: 'Jack',age: 14}]
     </script>
     <style>
         .loading {

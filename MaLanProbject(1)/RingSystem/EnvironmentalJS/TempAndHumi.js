@@ -125,8 +125,8 @@ function TempAndHumView(TempAndHumData) {
             " <div style='width: 30vw;height: 37vh'></div>" +
             "</div>" +
             "<div style='display:flex;flex-direction: column;align-items: center;margin:4vh 0 0 2.7vw'>" +
-            "<div style='display: flex;align-items: center'><img src='./imgs/temperatureicon.png' style='margin-right: 0.5vw;height: 1vh; width:3vw' alt=''>温度</div>" +
-            "<div style='display: flex;align-items: center;margin-top: 1vh'><img src='./imgs/humidityicon.png' style='margin-right: 0.5vw;height: 1vh;width:3vw' alt=''>湿度</div>" +
+            "<div style='display: flex;align-items: center'><img src='../imgs/temperatureicon.png' style='margin-right: 0.5vw;height: 1vh; width:3vw' alt=''>温度</div>" +
+            "<div style='display: flex;align-items: center;margin-top: 1vh'><img src='../imgs/humidityicon.png' style='margin-right: 0.5vw;height: 1vh;width:3vw' alt=''>湿度</div>" +
             "<div style='margin-top: 7.5vh;'>温度</div>" +
             "<div style='margin-top: 2vh;background-color: rgb(229, 131, 96);width: 6.5vw;line-height: 4.5vh;display: flex;justify-content: center;border-radius: 3vw'>" +
             TempAndHumData[h].ehmTem + "℃</div>" +
