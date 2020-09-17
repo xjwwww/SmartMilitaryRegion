@@ -1,0 +1,241 @@
+.right-ups {
+    display: none;
+    width: 86vw;
+    height: 86.5vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 2vh 0 0 1vw;
+    color: #fff;
+    flex-direction: column;
+}
+
+.right-ups>div:nth-child(1) {
+    font-size: 1.25vw;
+    padding-left: 2.5vw;
+    padding-top: 3vh;
+}
+
+.right-ups>div:nth-child(1) text:hover {
+    cursor: pointer;
+}
+
+.AdvancedQuery {
+    margin-left: 1.5vw;
+    width: 5.5vw;
+    height: 4vh;
+    background-color: rgb(229, 131, 96);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3vw;
+    color: #fff;
+    border-color: rgb(229, 131, 96);
+    font-size: 1vw;
+}
+
+
+/* 报警数据 */
+
+.UpsWarMiddle {
+    width: 80vw;
+    height: 62vh;
+    background-color: #444444;
+    margin: 2vh 0 0 2.5vw;
+    border-radius: 1vw;
+    padding-top: 2vh;
+}
+
+.UpsWarTitle {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2vw;
+}
+
+.UpsWarTitle>h3:nth-child(1) {
+    width: 10.66%;
+    display: flex;
+    justify-content: center;
+}
+
+.UpsWarTitle>h3:nth-child(1)~h3 {
+    width: 17.76%;
+    display: flex;
+    justify-content: center;
+}
+
+.UpsWarAllContent {
+    height: 54vh;
+}
+
+
+/* 隐藏滑动条 */
+
+
+/* .UpsWarAllContent::-webkit-scrollbar {
+    width: 0;
+} */
+
+.UpsWarningContent {
+    display: flex;
+    flex-direction: row;
+    font-size: 1vw;
+    padding-top: 2vh;
+}
+
+.UpsWarningContent:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.UpsWarningContent>div:nth-child(1) {
+    width: 10.66%;
+    height: 4vh;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.UpsWarningContent>div:nth-child(1)~div {
+    width: 17.76%;
+    height: 4vh;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.UpsWarPage {
+    width: 10vw;
+    margin: 1vh 0 0 33vw;
+    font-size: 0.8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.UpsWarPage>div:nth-child(1) {
+    display: flex;
+    width: 1.1vw;
+    height: 1.1vw;
+    background-color: #55AA88;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.8vw;
+}
+
+.UPS-midder {
+    width: 10.8rem;
+    height: 4.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.1rem auto 0 0.1rem;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    overflow: auto;
+    padding-top: 0.1rem;
+}
+
+.Ups-bottom {
+    margin: 0.05rem auto 0 0.1rem;
+    width: 10.8rem;
+    height: 0.42rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UPSContentList {
+    margin: 0 auto 0.2rem auto;
+    width: 10.5rem;
+    height: 2rem;
+    border-radius: 0.1rem;
+    background-color: rgb(44, 44, 44);
+    font-size: 0.14rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.UPSContentList>div:nth-child(1)>div:nth-child(1) {
+    margin-bottom: 0.1rem;
+}
+
+.UPSContentList>div:nth-child(1)>img {
+    width: 0.8rem;
+    height: 1.3rem;
+}
+
+.UPSContentList>div:nth-child(5),
+.UPSContentList>div:nth-child(4),
+.UPSContentList>div:nth-child(3),
+.UPSContentList>div:nth-child(2),
+.UPSContentList>div:nth-child(1) {
+    width: 15%;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.UPSContentList>div:nth-child(3) {
+    width: 20%;
+}
+
+.UPSContentList>div:nth-child(4) {
+    width: 20%;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.UPSContentList>div:nth-child(5) {
+    width: 20%;
+    margin-left: 0.2rem;
+    text-align: center;
+}
+
+.UPSContentList>div:nth-child(1) {
+    align-items: center;
+}
+
+.UPSContentList>div:nth-child(2)>div {
+    margin-bottom: 0.05rem;
+}
+
+.UPSContentList>div:nth-child(3)>div:nth-child(1) {
+    margin-top: 0.1rem;
+}
+
+.UPSContentList>div:nth-child(3)>div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.06rem;
+    justify-content: flex-end
+}
+
+.UPSContentList>div:nth-child(3)>div>div {
+    background-color: rgb(68, 165, 148);
+    font-size: 0.12rem;
+    width: 1rem;
+    height: 0.23rem;
+    text-align: center;
+    line-height: 0.23rem;
+    border-radius: 0.2rem;
+}
+
+.UPSContentList>div:nth-child(5)>div,
+.UPSContentList>div:nth-child(4)>div {
+    margin-bottom: 0.08rem;
+}
+
+.Ups-bottom>div {
+    font-size: 0.13rem;
+    background-color: rgb(44, 44, 44);
+    width: 1.1rem;
+    height: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2rem;
+}

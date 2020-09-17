@@ -1,0 +1,47 @@
+/* 烟感样式 */
+
+.main .main-right>div:nth-child(4) {
+    width: 86vw;
+    height: 86vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 2vh 0 0 1vw;
+    color: #fff;
+    display: none;
+}
+
+.main .main-right>div:nth-child(4)>div:nth-child(1) {
+    font-size: 1.25vw;
+    padding-left: 2.5vw;
+    padding-top: 3vh;
+}
+
+.main .main-right>div:nth-child(4)>div:nth-child(1) text:hover {
+    cursor: pointer;
+}
+
+.SmokRealTime {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+    font-size: 1.35vw;
+}
+
+.SmokRealTime-mind {
+    width: 27vw;
+    background-color: #444444;
+    height: 30vh;
+    margin-top: 4vh;
+    margin-left: 1.2vw;
+    border-radius: 1vw;
+}
+
+.SomkeState {
+    margin-left: 11vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(68, 165, 148);
+    width: 9vw;
+    line-height: 6vh;
+    border-radius: 1.5vw;
+}

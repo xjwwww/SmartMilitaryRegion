@@ -1,0 +1,636 @@
+html {
+    font-size: calc(100vw / 1280 * 100);
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    height: 0.15rem;
+    font-size: 0.13rem;
+}
+
+.EigAdd-up,
+.ChangeIp-up,
+.EigClone-bg,
+.eig-header>span:nth-child(2),
+.EightChange,
+.Eight-header,
+.CloneChangeIp,
+.ip-up>div,
+.IpBg-header>span:nth-last-child(1),
+.ip-header,
+.position-header:hover,
+.WaringBg-up>div,
+.WaringBaCline,
+.right-title>h5:hover,
+.bg-content>div:nth-child(3)>div:hover,
+.clonse:hover {
+    cursor: pointer;
+}
+
+.eight-content:hover,
+.ip-content:hover,
+.waring-content:hover,
+.position-content:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.main-right {
+    position: relative;
+}
+
+.right-middle {
+    width: 11rem;
+    height: 5.76rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 0.18rem 0 0 0.12rem;
+    color: #fff;
+    overflow: auto;
+    font-size: 0.12rem;
+}
+
+.right-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.17rem;
+}
+
+.right-title>h5:nth-child(1)~h5 {
+    color: #888;
+}
+
+.right-title>h5 {
+    margin: 0.24rem 0 0.17rem 0.4rem;
+}
+
+
+/* 位置设置 */
+
+.Eight-header,
+.ip-header,
+.position-header {
+    width: 0.82rem;
+    height: 0.37rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin-left: 0.27rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.WarringContent,
+.Eight-middle,
+.ip-middle,
+.position-middle {
+    width: 10.81rem;
+    height: 4.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.1rem;
+    margin: 0.17rem auto 0 auto;
+}
+
+.WarringContent {
+    height: 4.62rem;
+}
+
+.position-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.17rem;
+    margin-bottom: 0.12rem;
+}
+
+.position-title>h5 {
+    width: 25%;
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+
+/* -------------------------位置设置中间内容列表样式--------------------------- */
+
+.waring-content,
+.position-content {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.15rem;
+}
+
+.position-content>h5 {
+    width: 25%;
+    line-height: 0.33rem;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -------------------------位置设置中间内容列表样式--------------------------- */
+
+.position-content>h5>div {
+    line-height: 0.24rem;
+    width: 0.7rem;
+    border-radius: 0.13rem;
+}
+
+.position-content>h5:nth-child(3)>div {
+    background-color: #44a594;
+}
+
+.position-content>h5:nth-child(4)>div {
+    background-color: #a54444;
+}
+
+
+/* 遮掩层 */
+
+.ChangeBg,
+.EigChange-bg,
+.eight-bg,
+.changeIp-bg,
+.ip-bg,
+.waring-bg,
+.bg {
+    position: absolute;
+    background-color: rgba(213, 213, 213, 0.8);
+    z-index: 100;
+    width: 88vw;
+    height: inherit;
+    left: 12vw;
+    top: 8.5vh;
+    display: none;
+    font-size: 0.14rem;
+}
+
+.bg-title {
+    margin: 0.42rem 0 0 0.52rem;
+    color: #2e4033;
+    font-weight: 700;
+}
+
+.bg-content {
+    width: 3.02rem;
+    height: 1.18rem;
+    background: #2e4033;
+    margin: 1.3rem 0 0 4.11rem;
+    overflow: auto;
+    border-radius: 0.08rem;
+}
+
+.bg-content>div:nth-child(1) {
+    height: 0.32rem;
+    background-color: #2e4033;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.clonse {
+    font-size: 0.17rem;
+}
+
+.clonse,
+.bg-content>div:nth-child(1) h4 {
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.bg-content>div:nth-child(2) {
+    height: 0.35rem;
+    background-color: #8A918C;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bg-content>div:nth-child(2)>h4 {
+    color: #fff;
+    margin: auto 0.05rem auto 0.84rem;
+}
+
+.bg-content>div:nth-child(2)>input {
+    width: 0.75rem;
+}
+
+.bg-content>div:nth-child(3) {
+    height: 0.49rem;
+    background-color: #2e4033;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ChangeIp-up>div,
+.EigAdd-up>div,
+.ip-up>div,
+.WaringBg-up>div,
+.bg-content>div:nth-child(3)>div {
+    width: 0.7rem;
+    line-height: 0.26rem;
+    border-radius: 0.1rem;
+    text-align: center;
+    background-color: rgb(229, 131, 96);
+}
+
+
+/* 报警设置 */
+
+.warring-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.warring-title>h3 {
+    width: 12.5%;
+    text-align: center;
+    margin: 0.25rem 0 0.12rem 0;
+}
+
+
+/* 报警内容 */
+
+.waring-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.waring-content>h5 {
+    width: 12.5%;
+    text-align: center;
+    line-height: 0.35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.waring-content>h5>div {
+    background-color: rgb(68, 165, 148);
+    border-radius: 0.3rem;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 报警遮掩层 */
+
+.WaringBg-title {
+    color: #2e4033;
+    margin: 0.42rem 0 0 1.49rem;
+    font-weight: 700;
+}
+
+.WaringBg-content {
+    width: 3.35rem;
+    height: 2.18rem;
+    background: #2e4033;
+    margin: 1.3rem 0 0 4.32rem;
+    border-radius: 0.1rem;
+}
+
+.WaringBg-header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 17%;
+}
+
+.WaringBg-header>span {
+    margin-left: 0.94rem;
+    font-size: 0.16rem;
+    font-weight: 700;
+}
+
+.WaringBg-middle {
+    color: #fff;
+    font-weight: 700;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: right;
+    background-color: #8A918C;
+}
+
+.WaringBg-middle>li {
+    margin-top: 0.05rem;
+}
+
+.WaringBg-middle>li>span {
+    margin: 0.05rem 0 0 0.05rem;
+    display: flex;
+    text-align: right;
+}
+
+.WaringBg-middle>li>input {
+    width: 35%;
+    margin: 0 0.86rem 0 0.05rem;
+}
+
+.WaringBg-up {
+    height: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ip设置样式 */
+
+.ip-title {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.12rem;
+}
+
+.eight-title>h5,
+.ip-title>h5 {
+    width: 14.258%;
+    margin-top: 0.24rem;
+    font-size: 0.14rem;
+}
+
+.eight-title>h5:nth-child(1),
+.ip-title>h5:nth-child(1) {
+    width: 10%;
+}
+
+.eight-title>h5:nth-last-child(1),
+.ip-title>h5:nth-last-child(1) {
+    width: 17.258%;
+}
+
+.eight-content,
+.ip-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.eight-content>h5,
+.ip-content>h5 {
+    width: 14.258%;
+    line-height: 0.35rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.12rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.eight-content>h5:nth-child(1),
+.ip-content>h5:nth-child(1) {
+    width: 10%;
+}
+
+.eight-content>h5:nth-last-child(1),
+.ip-content>h5:nth-last-child(1) {
+    width: 17.258%;
+}
+
+.ip-content>h5:nth-child(6)>div {
+    background-color: #44a594;
+    width: 47%;
+    border-radius: 1rem;
+    line-height: 0.26rem;
+    text-align: center;
+}
+
+.eight-content>h5:nth-last-child(1)>div:nth-child(1),
+.ip-content>h5:nth-last-child(1)>div:nth-child(1) {
+    background-color: #e58360;
+    width: 40%;
+    border-radius: 1rem;
+    margin-right: 6%;
+    line-height: 0.26rem;
+    text-align: center;
+}
+
+.eight-content>h5:nth-last-child(1)>div:nth-child(2),
+.ip-content>h5:nth-last-child(1)>div:nth-child(2) {
+    background-color: #a54444;
+    width: 40%;
+    line-height: 0.26rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+/* ip设置遮掩层 */
+
+.IpChange-title,
+.IpBg-title {
+    margin: 0.42rem 0 0 2.46rem;
+    font-weight: 700;
+    color: #2e4033;
+}
+
+.EigChange-content,
+.EigAdd-content,
+.IpChange-content,
+.IpBg-content {
+    width: 3.02rem;
+    height: 1.8rem;
+    background-color: #2e4033;
+    margin: 1.2rem auto 0 auto;
+    border-radius: 0.1rem;
+}
+
+.IpBg-header {
+    height: 20%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.IpBg-header>span {
+    margin-left: 1.15rem;
+}
+
+.IpBg-header>span:nth-last-child(1) {
+    font-size: 0.17rem;
+}
+
+.IpChangeBg-middle,
+.IpBg-middle {
+    height: 60%;
+    background-color: #919191;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.IpChangeBg-middle>div,
+.IpBg-middle>div {
+    margin-bottom: 0.03rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.IpChangeBg-middle>div>input,
+.IpBg-middle>div>select,
+.IpBg-middle>div>input {
+    width: 40%;
+    font-size: 0.12rem;
+    border: none
+}
+
+.ip-up {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.IpChange-header {
+    height: 25%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.IpChange-header>span {
+    margin-left: 1.05rem;
+}
+
+.IpChange-content {
+    height: 1.37rem;
+    width: 3.01rem;
+}
+
+.IpChangeBg-middle {
+    height: 45%;
+}
+
+.ChangeIp-up {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 8052模块样式 */
+
+.eight-title {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.12rem;
+}
+
+.EigChange-title,
+.EigAdd-title {
+    margin: 0.42rem 0 0 3.28rem;
+    font-weight: 600;
+    color: #2e4033;
+}
+
+.EigAdd-content {
+    height: 2.3rem;
+    width: 3.01rem;
+}
+
+.eig-header {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13%;
+}
+
+.eig-header>span:nth-child(2) {
+    font-size: 0.17rem;
+}
+
+.eig-header>span:nth-child(1) {
+    margin-left: 1.1rem;
+    margin-right: 1rem;
+}
+
+.eig-middle {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 68%;
+    background-color: #919191;
+    font-size: 0.12rem;
+}
+
+.eig-middle>div {
+    margin-top: 0.05rem;
+}
+
+.eig-middle>div>input {
+    border: none;
+}
+
+.eig-middle>div>input,
+.eig-middle>div>select {
+    width: 1.2rem;
+    height: 0.18rem;
+    font-size: 0.11rem;
+}
+
+.EigAdd-up {
+    height: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.EigChange-content {
+    height: 1.97rem;
+    width: 3.01rem;
+}
+
+.EigChange-header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 17%;
+    font-size: 0.13rem;
+}
+
+.EigChange-header>span:nth-child(1) {
+    margin: 0 0.85rem 0 1.05rem;
+}
+
+.EigChange-middle {
+    height: 63%;
+    background-color: #919191;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.EigChange-middle>div>input {
+    width: 1.2rem;
+}
+
+.EigChange-middle>div:nth-child(1)~div {
+    margin-top: 0.05rem;
+}

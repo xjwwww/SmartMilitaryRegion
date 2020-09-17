@@ -1,0 +1,668 @@
+/* 报警数据样式 */
+
+.ElectriHeader {
+    width: 82vw;
+    margin: 2vh 0 0 2.5vw;
+    display: flex;
+    flex-direction: row;
+    font-size: 1vw;
+    font-weight: 700;
+}
+
+.ElectricityMeter {
+    width: 86vw;
+    height: 87vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 2vh 0 0 1vw;
+    display: none;
+    color: #fff;
+}
+
+.ElectricityHistorical {
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+
+/* 标题样式 */
+
+.ElectricityMeter>div:nth-child(1) {
+    padding-top: 3vh;
+    font-size: 1.15vw;
+}
+
+.ElectricityMeter>div:nth-child(1) span {
+    margin-left: 2.5vw;
+}
+
+.ElectricityDetailsDelete,
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(3)>div,
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(1)>div:nth-child(2),
+.ElectricityDetailsUp,
+.ElectricityBg-conten>div:nth-child(1)>div:nth-child(2),
+.ElectricityMeter>div:nth-child(1) span:hover {
+    cursor: pointer;
+}
+
+.ElectricityMeter>div:nth-child(1)>span:nth-child(1)~span {
+    color: #888;
+}
+
+.Electri-second {
+    background-color: #444444;
+    margin-left: 1.2vw;
+    border-radius: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43%;
+}
+
+.Electri-third {
+    background-color: #444444;
+    margin-left: 1.2vw;
+    border-radius: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17%;
+    font-size: 1vw;
+}
+
+.Electri-second select,
+.Electri-third select {
+    background-color: #444444;
+    color: #fff;
+    border-radius: 0.3vw;
+    font-size: 0.9vw;
+    height: 3vh;
+    margin-left: 1vw;
+    width: 4.5vw;
+    outline: none;
+}
+
+.Electri-second>select:nth-child(2) {
+    width: 6.5vw;
+}
+
+.Electri-second select option,
+.Electri-third select option {
+    background-color: #777777;
+}
+
+.ElectriAdvancedQuery {
+    margin-left: 1.5vw;
+    width: 5.5vw;
+    height: 4vh;
+    background-color: rgb(229, 131, 96);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3vw;
+    color: #fff;
+    border-color: rgb(229, 131, 96);
+    font-size: 1vw;
+}
+
+.ElectricityBg-conten>div:nth-child(3)>div,
+.ElectriAdvancedQuery:hover {
+    cursor: pointer;
+}
+
+
+/* 内容样式 */
+
+.ElectrMiddle {
+    width: 82vw;
+    height: 64vh;
+    background-color: #444444;
+    margin: 2vh 0 0 2.5vw;
+    border-radius: 1vw;
+    padding-bottom: 1.5vh;
+    padding-top: 2vh;
+}
+
+
+/* 标题样式 */
+
+.ElectrTitle {
+    display: flex;
+    flex-direction: row;
+}
+
+.ElectrTitle h5 {
+    font-size: 1.1vw;
+    text-align: center;
+    width: 7vw;
+}
+
+.ElectrTitle>h5:nth-child(1) {
+    width: 4vw;
+    margin-left: 1vw;
+}
+
+.ElectrTitle>h5:nth-last-child(2) {
+    width: 8vw;
+}
+
+.ElectrTitle>h5:nth-last-child(1) {
+    width: 13vw;
+}
+
+
+/* 标题下的内容 */
+
+.ElectrContent {
+    margin-top: 2vh;
+}
+
+.ElectrContent-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ElectrContent-details div {
+    font-size: 1.1vw;
+    text-align: center;
+    width: 7vw;
+    line-height: 5.5vh;
+}
+
+.ElectrContent-details:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ElectrContent-details>div:nth-child(1) {
+    width: 4vw;
+    margin-left: 1vw;
+}
+
+.ElectrContent-details>div:nth-last-child(2) {
+    width: 8vw;
+}
+
+.ElectrContent-details>div:nth-last-child(1) {
+    width: 13vw;
+}
+
+
+/* 底部page样式 */
+
+.ElectrPage {
+    margin: 1.5vh auto 0 auto;
+    font-size: 0.8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.ElectrPage>div:nth-child(1) {
+    display: flex;
+    width: 1.1vw;
+    height: 1.1vw;
+    background-color: #55AA88;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.8vw;
+}
+
+.ElectricityRealTime {
+    width: 10.8rem;
+    height: 4.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.1rem auto 0 0.1rem;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    overflow: auto;
+    padding-top: 0.1rem;
+}
+
+.Electricity-mind {
+    width: 98%;
+    height: 4.4rem;
+    margin: 0 auto 0.1rem auto;
+    border-radius: 0.1rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.14rem;
+    background-color: rgb(44, 44, 44);
+}
+
+.Electricity-mind-bottom {
+    margin: 0.05rem auto 0 0.1rem;
+    width: 10.8rem;
+    height: 0.42rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Electricity-mind-bottom>div {
+    font-size: 0.13rem;
+    background-color: rgb(44, 44, 44);
+    width: 1.1rem;
+    height: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2rem;
+}
+
+.ElectricityRealTime-mind {
+    width: 20%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ElectricityRealTime-bottom {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ElectricityRealTime-bottom>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+
+/* .ElectricityRealTime-bottom>div>div, */
+
+.ElectricityRealTime-mind>div:nth-child(2)>div,
+.ElectricityRealTime-mind>div:nth-child(1)>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*align-items: center; */
+    margin-bottom: 0.1rem;
+}
+
+.ElectricityRealTime-bottom>div>div {
+    display: flex;
+    flex-direction: row;
+    width: 2rem;
+    margin-bottom: 0.06rem;
+}
+
+.ElectricityRealTime-mind>div:nth-child(1)>div:nth-child(1) {
+    margin: 0.13rem 0 0.3rem 0;
+}
+
+.ElectricityRealTime-bottom>div>div>div:nth-child(1) {
+    width: 50%;
+    text-align: right;
+}
+
+.ElectricityRealTime-bottom>div>div>div:nth-child(2),
+.ElectricityRealTime-mind>div:nth-child(2)>div>div,
+.ElectricityRealTime-mind>div:nth-child(1)>div>div {
+    width: 0.57rem;
+    line-height: 0.23rem;
+    border-radius: 0.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.05rem;
+    height: 0.23rem;
+    background-color: rgb(164, 68, 69);
+}
+
+.ElectricityRealTime-bottom>div>div>div {
+    line-height: 0.22rem;
+    height: 0.22rem
+}
+
+.ElectricityRealTime-mind>div:nth-child(2) {
+    height: 50%;
+    margin-top: 1.5rem;
+}
+
+.Dashboard {
+    width: 60%;
+    height: 80%;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap
+}
+
+.DashboardOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.333%;
+    height: 2.3rem;
+}
+
+.ElectricityDeviceContent {
+    width: 10.8rem;
+    height: 4.6rem;
+    margin: 0.1rem auto 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.1rem;
+    overflow: auto;
+}
+
+.ElectricityDeviceTitle {
+    font-size: 0.14rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ElectricityDeviceTitle>div {
+    line-height: 0.4rem;
+    height: 0.4rem;
+    text-align: center;
+}
+
+.ElectricityDeviceTitle>div:nth-child(1) {
+    width: 22%;
+}
+
+.ElectricityDeviceTitle>div:nth-child(2) {
+    width: 68%;
+}
+
+.ElectricityDeviceTitle>div:nth-child(3) {
+    width: 10%;
+}
+
+.ElectricityDetails {
+    display: flex;
+    flex-direction: row;
+}
+
+.ElectricityDetailsLeft {
+    font-size: 0.14rem;
+    width: 22%;
+    height: 1.5rem;
+    text-align: center;
+}
+
+.ElectricityDetailsLeft>div:nth-child(1) {
+    margin-top: 0.4rem;
+}
+
+.ElectricityDetailsLeft>div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ElectricityDetailsLeft>div:nth-child(2)>div:nth-child(1) {
+    width: 40%;
+}
+
+.ElectricityDetailsLeft>div:nth-child(2)>div:nth-child(2) {
+    width: 60%;
+}
+
+.ElectricityDetailsLeft>div:nth-child(2)>div>div {
+    height: 0.35rem;
+    text-align: center;
+    line-height: 0.35rem;
+}
+
+.ElectricityDetailsMiddle {
+    width: 68%;
+    height: 2.1rem;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(1) {
+    height: 0.3rem;
+    background-color: rgb(44, 44, 44);
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.13rem;
+    width: 95%;
+    margin: 0 auto 0.015rem auto;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(1)>div {
+    width: 10%;
+    margin-top: 0.09rem;
+    text-align: center;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(1)>div:nth-child(1),
+.ElectricityDetailsMiddle>div:nth-child(1)>div:nth-child(4),
+.ElectricityDetailsMiddle>div:nth-child(1)>div:nth-child(7) {
+    width: 13.33%;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(2) {
+    height: 1.7rem;
+    background-color: rgb(44, 44, 44);
+    font-size: 0.13rem;
+    border-bottom-right-radius: 0.1rem;
+    border-bottom-left-radius: 0.1rem;
+    width: 95%;
+    margin: auto;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(2)>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(2)>div>div {
+    width: 10%;
+    text-align: center;
+    height: 0.23rem;
+    line-height: 0.23rem;
+}
+
+.ElectricityDetailsMiddle>div:nth-child(2)>div>div:nth-child(7),
+.ElectricityDetailsMiddle>div:nth-child(2)>div>div:nth-child(4),
+.ElectricityDetailsMiddle>div:nth-child(2)>div>div:nth-child(1) {
+    width: 13.33%;
+}
+
+.ElectricityDetailsRight {
+    width: 10%;
+    font-size: 0.14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ElectricityDetailsRight>div:nth-child(2),
+.ElectricityDetailsRight>div:nth-child(1) {
+    background-color: rgb(68, 165, 148);
+    width: 0.8rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    text-align: center;
+    border-radius: 0.3rem;
+    margin-bottom: 0.1rem;
+}
+
+.ElectricityDetailsRight>div:nth-child(2) {
+    background-color: rgb(165, 66, 66);
+}
+
+.ElectricityChange-bg,
+.Electricity-bg {
+    position: absolute;
+    background-color: rgba(213, 213, 213, 0.8);
+    z-index: 100;
+    width: 88vw;
+    height: 100vh;
+    left: 12vw;
+    top: 8.5vh;
+    display: none;
+    font-size: 0.14rem;
+}
+
+.ElectricityBg-title {
+    position: relative;
+    top: 0.32rem;
+    left: 3.3rem;
+    font-size: 0.145rem;
+    font-weight: 700;
+    display: inline-block;
+    color: rgb(46, 64, 51);
+}
+
+.ElectricityChange-bg>div:nth-child(2),
+.ElectricityBg-conten {
+    width: 3.6rem;
+    height: 2.5rem;
+    background-color: rgb(46, 64, 51);
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    /* 往上移动自身高度的百分之50 */
+    transform: translateY(-60%);
+    border-radius: 0.1rem;
+}
+
+.ElectricityBg-conten>div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    height: 0.4rem;
+    line-height: 0.35rem;
+}
+
+.ElectricityBg-conten>div:nth-child(1)>div:nth-child(1) {
+    width: 94%;
+    text-align: center;
+}
+
+.ElectricityBg-conten>div:nth-child(2) {
+    height: 1.67rem;
+    background-color: rgb(110, 110, 110);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ElectricityBg-conten>div:nth-child(2)>div>select,
+.ElectricityBg-conten>div:nth-child(2)>div>input {
+    width: 1rem;
+    border: none;
+    font-size: 0.17rem;
+    margin-bottom: 0.1rem;
+    height: 0.2rem;
+}
+
+.ElectricityBg-conten>div:nth-child(3) {
+    height: 0.43rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ElectricityBg-conten>div:nth-child(3)>div {
+    background-color: rgb(229, 131, 96);
+    width: 0.6rem;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    text-align: center;
+    border-radius: 0.05rem;
+}
+
+.ElectricityChange-bg>div:nth-child(2) {
+    width: 7.5rem;
+    height: 3.8rem;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(1) {
+    height: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(1)>div:nth-child(1) {
+    width: 96%;
+    text-align: center;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2) {
+    width: 7.5rem;
+    height: 2.95rem;
+    background-color: rgb(110, 110, 110);
+    display: flex;
+    flex-direction: row;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul>li {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.12rem;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul>li>div {
+    width: 1rem;
+    text-align: right;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul>li:nth-child(1)>select,
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul>li:nth-child(1)>input {
+    width: 1.2rem;
+    margin-right: 0.04rem;
+    border: none;
+    font-size: 0.14rem;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul:nth-child(1)>li:nth-last-child(1)>input,
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul:nth-child(1)>li:nth-last-child(1)>select {
+    width: 1.2rem;
+    margin-right: 0.04rem;
+    border: solid 0.01rem #fff;
+    border-radius: 0.03rem;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(2)>ul>li:nth-child(1)~li input {
+    width: 0.6rem;
+    line-height: 0.3rem;
+    height: 0.2rem;
+    margin-right: 0.02rem;
+    border-radius: 0.06rem;
+    border: none;
+    text-indent: 0.05rem;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(3) {
+    height: 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ElectricityChange-bg>div:nth-child(2)>div:nth-child(3)>div {
+    background-color: rgb(229, 131, 96);
+    width: 1rem;
+    height: 0.27rem;
+    line-height: 0.27rem;
+    text-align: center;
+    border-radius: 0.1rem;
+}

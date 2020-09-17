@@ -1,0 +1,13 @@
+.back {
+    position: absolute;
+    background-color: rgb(3, 20, 39);
+    left: 95.5vw;
+    top: 4.5vh;
+    font-size: 1vw;
+    color: #fff;
+}
+
+.back:hover {
+    cursor: pointer;
+    background-color: rgb(74, 120, 164);
+}

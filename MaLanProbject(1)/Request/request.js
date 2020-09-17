@@ -22,22 +22,36 @@ function AJAX(method, url, data, flag, callback) {
         //初始化
         if (data == '') {
             //坐统一的接口管理
-            let NewUrl = "http://192.168.1.42:8080/" + url
+            let NewUrl = "http://192.168.1.253:8080/" + url
             xhr.open(method, NewUrl, flag);
+            xhr.setRequestHeader('token', '95e0b12448bc51906b6f23759ca4456a')
 
         } else {
             // data 传过来必须是字符串
             xhr.open(method, url + "?" + data, flag);
+            xhr.setRequestHeader('token', '95e0b12448bc51906b6f23759ca4456a')
         }
 
         //发送请求
         xhr.send();
 
     } else if (method == "POST") {
-        let NewUrl = "http://192.168.1.42:8080/" + url
+        let NewUrl = "http://192.168.1.253:8080/" + url
         xhr.open(method, NewUrl, flag);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.send(data);
+        xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.setRequestHeader('token', '95e0b12448bc51906b6f23759ca4456a')
+        xhr.send(JSON.stringify(data));
+    } else if (method == "DELETE") {
+        let NewUrl = "http://192.168.1.253:8080/" + url
+        xhr.open(method, NewUrl, flag);
+        xhr.setRequestHeader('token', '95e0b12448bc51906b6f23759ca4456a')
+        xhr.send();
+    } else if (method == "PUT") {
+        let NewUrl = "http://192.168.1.253:8080/" + url
+        xhr.open(method, NewUrl, flag);
+        xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.setRequestHeader('token', '95e0b12448bc51906b6f23759ca4456a')
+        xhr.send(JSON.stringify(data));
     }
     //判断数据是否回来,请求是否成功
     xhr.onreadystatechange = function() {

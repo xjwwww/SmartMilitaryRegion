@@ -1,0 +1,117 @@
+.FreshAirFan {
+    width: 86vw;
+    height: 84vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8vw;
+    margin: 2vh 0 0 1vw;
+    color: #fff;
+    font-size: 0.14rem;
+    padding-top: 0.25rem;
+}
+
+.FreshAirFan>div:nth-child(1) {
+    margin-left: 0.45rem;
+    margin-bottom: 0.2rem;
+}
+
+.FreshAirFan>div:nth-child(2) {
+    width: 10.62rem;
+    height: 4.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.1rem auto 0 0.1rem;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding-left: 0.18rem;
+    padding-bottom: 0.1rem;
+}
+
+.FreshAirFan>div:nth-child(3) {
+    margin: 0.05rem auto 0 0.1rem;
+    width: 10.8rem;
+    height: 0.42rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FreshAirFan>div:nth-child(2)>div {
+    background-color: rgb(44, 44, 44);
+    margin-top: 0.15rem;
+    width: 3.3rem;
+    height: 2rem;
+    margin-right: 0.18rem;
+    border-radius: 0.1rem;
+}
+
+.FreshAirFan-details>div:nth-child(1) {
+    text-align: center;
+    height: 0.5rem;
+    line-height: 0.5rem;
+}
+
+.FreshAirFan-details>div:nth-child(3),
+.FreshAirFan-details>div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+}
+
+.FreshAirFan-details>div:nth-child(3)>div:nth-child(1),
+.FreshAirFan-details>div:nth-child(3)>div:nth-child(3),
+.FreshAirFan-details>div:nth-child(2)>div:nth-child(3),
+.FreshAirFan-details>div:nth-child(2)>div:nth-child(1) {
+    margin-top: 0.1rem;
+    width: 20%;
+    height: 0.4rem;
+    /* line-height: 0.3rem;
+    text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FreshAirFan-details>div:nth-child(3)>div:nth-child(2),
+.FreshAirFan-details>div:nth-child(2)>div:nth-child(2) {
+    margin-top: 0.1rem;
+    width: 60%;
+    height: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FreshAirFan-details>div:nth-child(3) {
+    margin-top: 0.3rem;
+}
+
+.FreshAirFan-details>div:nth-child(3)>div:nth-child(2)>div:nth-child(1) {
+    background-color: rgb(61, 61, 61);
+    width: 60%;
+    line-height: 0.4rem;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FreshAirFan-details>div:nth-child(3)>div:nth-child(3)>div:nth-child(1) {
+    background-color: rgb(68, 165, 148);
+    height: 0.25rem;
+    line-height: 0.25rem;
+    border-radius: 0.2rem;
+    width: 90%;
+    display: flex;
+    font-size: 0.12rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10%
+}
+
+.FreshAirFan-details>div:nth-child(3)>div:nth-child(3)>div:nth-child(1):hover {
+    cursor: pointer;
+}

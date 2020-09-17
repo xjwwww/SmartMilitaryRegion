@@ -20,8 +20,10 @@ let Environmental = {
     TempAndHumi: document.getElementById("TempAndHumi"),
     SmokeSensation: document.getElementById("SmokeSensation"),
     Ups: document.getElementById("right-ups"),
-    ElectricityMeter: document.getElementById('ElectricityMeter')
-
+    ElectricityMeter: document.getElementById('ElectricityMeter'),
+    ExhaustFan: document.getElementById("ExhaustFanContent"),
+    FreshAirFan: document.getElementById("FreshAirFanContent"),
+    PowerSupply: document.getElementById("PowerSupplyFunContent")
 }
 
 //隐藏所有的兄弟元素
@@ -60,3 +62,14 @@ shutdown.addEventListener('click', function() {
     }
 
 });
+
+
+// 时间触发事件
+var GetTime = function StartTime() {
+    Calendar.create({
+        classN: 'calendar-item',
+        callBack: function(bindElem, dateObj) {
+            bindElem.innerHTML = dateObj.year + '-' + dateObj.month + '-' + dateObj.date;
+        }
+    })
+}

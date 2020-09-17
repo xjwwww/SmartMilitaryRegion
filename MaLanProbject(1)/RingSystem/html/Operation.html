@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运维监控</title>
+    <link rel="stylesheet" href="../ringSystem.css">
+    <link rel="stylesheet" href="../Operation/Operation.css">
+    <link rel="stylesheet" href="../../Common/page/page.css">
+    <script src="../../node_modules/babel-polyfill/dist/polyfill.js"></script>
+    <script src="../../JQuery/jquery-3.5.1.js"></script>
+    <script src="../../Common/page/jquery.z-pager.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <!-- 安防系统图标和文字 -->
+        <div class="ring-box">
+            <div class="ring-icon"><img src="../imgs/ringIcon.png" alt="动环图标"></div>
+            <div class="ring-text">动环系统</div>
+        </div>
+
+        <!-- 中间 -->
+        <div class="header-middle">
+            <div id="middleBox" class="middle-box">
+                <!-- 环境系统 -->
+                <div id="environmentSystem" class="environment-system">环境系统</div>
+
+                <!-- 动力系统 -->
+                <div id="powerGuard" class="power-guard">动力系统</div>
+
+                <!-- 安防监控 -->
+                <div id="security" class="security">安防监控</div>
+
+                <!-- 运维监控 -->
+                <div id="operations" class="operations">运维监控</div>
+            </div>
+        </div>
+
+        <!-- 右边图标 -->
+        <div class="header-right">
+            <!-- 矢量智能对象 -->
+            <div id="management" class="vector-smart"><img src="../imgs/management.png" alt=""></div>
+            <div id="notice" class="notice"><img src="../imgs/notice.png" alt=""></div>
+            <div class="shutdown"><img id="shutdown" src="../imgs/shutdown.png" alt=""></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- 左边列表 -->
+        <ul id="mainLeft" class="main-left">
+            <!-- li 是根据后端返回的数据，遍历在页面上时创建的，以下 li 只是用来写 css 样式的 -->
+            <div><a href="../../HomePage/homepage.html">返回系统</a></div>
+        </ul>
+        <!-- 右边内容 -->
+        <div class="main-right" id="main-right">
+            <div class="right-middle">
+                <div class="right-title" id="right-title">
+                    <h5>位置设置</h5>
+                    <h5>报警设置</h5>
+                    <h5>IP设置</h5>
+                    <h5>8052模块</h5>
+                </div>
+                <!-- 位置设置 -->
+                <div id="position-conten">
+                    <div class="position-header" id="position-header">添加位置</div>
+                    <div class="position-middle">
+                        <div class="position-title">
+                            <h5>序列号</h5>
+                            <h5>所属位置</h5>
+                            <h5>修改</h5>
+                            <h5>删除</h5>
+                        </div>
+                        <div id="position-AllContent">
+                        </div>
+                        <div id="IpPage" class="IpPage">
+                            <div id="PositionPager" class="pager clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 报警设置 -->
+                <div class="positionWarring" id="positionWarring" style="display: none;">
+                    <div class="WarringContent">
+                        <div class="warring-title">
+                            <h3>星期</h3>
+                            <h3>时间段1</h3>
+                            <h3>时间段2</h3>
+                            <h3>时间段3</h3>
+                            <h3>短信报警</h3>
+                            <h3>声光报警</h3>
+                            <h3>连续警报间隔(/分钟)</h3>
+                            <h3>操作</h3>
+                        </div>
+                        <div id="WaringContent">
+                        </div>
+                        <div id="IpPage" class="IpPages">
+                            <div id="AlarmPager" class="pager clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- IP设置 -->
+                <div class="IP" id="IP" style="display: none;">
+                    <div class="ip-header" id="ip-header">添加位置</div>
+                    <div class="ip-middle">
+                        <div class="ip-title">
+                            <h5>序列号</h5>
+                            <h5>模块名称</h5>
+                            <h5>IP地址</h5>
+                            <h5>端口号</h5>
+                            <h5>通信状态</h5>
+                            <h5>通信操作</h5>
+                            <h5>功能操作</h5>
+                        </div>
+                        <div id="ip-allcontent">
+                        </div>
+                        <div id="IpPage" class="IpPage">
+                            <div id="pager" class="pager clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8052设置 -->
+                <div class="eight-two" id="eight-two" style="display: none;">
+                    <div class="Eight-header" id="Eight-header">添加位置</div>
+                    <div class="Eight-middle">
+                        <div class="eight-title">
+                            <h5>设备地址</h5>
+                            <h5>设备通道</h5>
+                            <h5>所在位置</h5>
+                            <h5>设备名称</h5>
+                            <h5>自定义名称</h5>
+                            <h5>对应IP端口</h5>
+                            <h5>操作</h5>
+                        </div>
+                        <div id="eignth-allcontent">
+                        </div>
+                        <div class="IpPage">
+                            <div id="EightTwoModulePager" class="pager clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 位置设置遮掩层 -->
+        <div id="bg" class="bg">
+            <div class="bg-title">位置设置</div>
+            <div class="bg-content">
+                <div>
+                    <h4>添加设备位置</h4>
+                    <div class="clonse" id="clonse">x</div>
+                </div>
+                <div>
+                    <h4>所属位置</h4>
+                    <input/>
+                </div>
+                <div>
+                    <div id="bg-add">提交</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 位置设置修改遮掩层 -->
+        <div id="ChangeBg" class="ChangeBg">
+            <div class="bg-title">位置设置</div>
+            <div class="bg-content">
+                <div>
+                    <h4>修改设备位置</h4>
+                    <div class="clonse" id="ClonseChange">x</div>
+                </div>
+                <div>
+                    <h4>所属位置</h4>
+                    <input id="ChangeBgLocation">
+                </div>
+                <div>
+                    <div id="ChangeBg-Posit">提交</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 报警设置遮掩层 -->
+        <div id="waring-bg" class="waring-bg">
+            <div class="WaringBg-title">报警设置</div>
+            <div class="WaringBg-content">
+                <div class="WaringBg-header">
+                    <span>修改设备报警信息</span>
+                    <span class="WaringBaCline" id="WaringBaCline">x</span>
+                </div>
+                <div class="WaringBg-middle" id="WaringBg-middle">
+                    <li>星期:<input disabled="disabled"> </li>
+                    <li> 时间段1:<input></li>
+                    <li>时间段2:<input></li>
+                    <li>时间段3:<input></li>
+                    <li>时间间隔:<input></li>
+                </div>
+                <div class="WaringBg-up">
+                    <div id="WaringBg-Up">提交</div>
+                </div>
+            </div>
+        </div>
+        <!-- ip添加设备遮掩层 -->
+        <div id="ip-bg" class="ip-bg">
+            <div class="IpBg-title">IP设置</div>
+            <div class="IpBg-content">
+                <div class="IpBg-header">
+                    <span>添加设备</span>
+                    <span id="CloneAddIp">x</span>
+                </div>
+                <div class="IpBg-middle" id="IpBg-middle">
+                    <div>模块名称：<select id="IpBg-modules">
+                    </select></div>
+                    <div>I&nbsp;P&nbsp;地&nbsp;址&nbsp;：<input></div>
+                    <div>IP端口号&nbsp;：<input></div>
+                </div>
+                <div class="ip-up">
+                    <div id="IpBg-up">提交</div>
+                </div>
+            </div>
+        </div>
+        <!-- ip修改设备遮掩层 -->
+        <div id="changeIp-bg" class="changeIp-bg">
+            <div class="IpChange-title">IP设置</div>
+            <div class="IpChange-content">
+                <div class="IpChange-header">
+                    <span>修改IP信息</span>
+                    <span id="CloneChangeIp" class="CloneChangeIp">x</span>
+                </div>
+                <div class="IpChangeBg-middle" id="IpChangeBg-middle">
+                    <div>I&nbsp;P&nbsp;地&nbsp;址&nbsp;：<input></div>
+                    <div>IP端口号&nbsp;：<input></div>
+                </div>
+                <div class="ChangeIp-up" id="ChangeIp-up">
+                    <div>提交</div>
+                </div>
+            </div>
+        </div>
+        <!-- 8052模块添加遮掩层 -->
+        <div id="eight-bg" class="eight-bg">
+            <div class="EigAdd-title">8052模块</div>
+            <div class="EigAdd-content">
+                <div class="eig-header">
+                    <span>添加设备</span>
+                    <span id="eigAdd-clone">x</span>
+                </div>
+                <div class="eig-middle">
+                    <div>
+                        设备地址：<select id="DeviceAddress"></select>
+                    </div>
+                    <div>
+                        设备通道：<select id="EquipmentAccess"></select>
+                    </div>
+                    <div>
+                        所在位置：<select></select>
+                    </div>
+                    <div>
+                        I&nbsp;P&nbsp;端&nbsp;口：<select id="IPAccess"></select>
+                    </div>
+                    <div>
+                        选择设备：<select id="SelectAddress"></select>
+                    </div>
+                    <div>
+                        设备名称：<input id="AddressName" />
+                    </div>
+                </div>
+                <div class="EigAdd-up" id="EigAdd-up">
+                    <div>提交</div>
+                </div>
+            </div>
+        </div>
+        <!-- 8052模块修改遮掩层 -->
+        <div id="EigChange-bg" class="EigChange-bg">
+            <div class="EigChange-title">8052模块</div>
+            <div class="EigChange-content">
+                <div class="EigChange-header">
+                    <span>修改8052信息</span>
+                    <span id="EigClone-bg" class="EigClone-bg">X</span>
+                </div>
+                <div class="EigChange-middle" id="EigChange-middle">
+                    <div>
+                        设备地址：<input disabled="disabled" />
+                    </div>
+                    <div>
+                        所在位置：<input disabled="disabled" />
+                    </div>
+                    <div>
+                        设备通道：<input disabled="disabled" />
+                    </div>
+                    <div>
+                        设备名称：<input />
+                    </div>
+                </div>
+                <div class="EigAdd-up">
+                    <div id='EigChange-up'>提交</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script src="../Operation/Operation.js "></script>
+    <!-- 公共方法 -->
+    <script src="../RingCommon/Switch.js "></script>
+    <script src="../../Request/request.js"></script>
+    <script src="../Operation/OperationJs/IPSettings.js"></script>
+    <script src="../Operation/OperationJs/Position.js"></script>
+    <script src="../Operation/OperationJs/AlarmSettings.js"></script>
+    <script src="../Operation/OperationJs/EightTwoModule.js"></script>
+</body>
+
+</html>
