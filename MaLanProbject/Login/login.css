@@ -3,7 +3,16 @@
     padding: 0;
 }
 
-body {
+
+/* body {
+    background-image: url('./imgs/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+} */
+
+.page {
+    width: 100vw;
+    height: 100vh;
     background-image: url('./imgs/bg.png');
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -13,9 +22,9 @@ body {
     width: 80vw;
     height: 78vh;
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    top: 0;
     bottom: 0;
     margin: auto;
     border-radius: 2vw;
@@ -293,7 +302,6 @@ body {
     right: 0;
     top: 50%;
     transform: translate(0%, -50%);
-    cursor: pointer
 }
 
 
@@ -347,4 +355,8 @@ body {
 
 .main .right>.memoriza-content>div:first-child input {
     vertical-align: text-bottom;
+}
+
+.main .right>.memoriza-content>div:first-child input:hover {
+    cursor: pointer;
 }
